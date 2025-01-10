@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class HomePageStepDefinitionsCem {
+public class HomePageStepDefinitions {
 
     @Given("The user navigates to the “homePage” address.")
     public void the_user_navigates_to_the_home_page_address() {
