@@ -7,9 +7,9 @@ import utilities.Driver;
 
 import java.util.List;
 
-public class StudentPage_Pinar {
+public class StudentHomeworkPage {
 
-    public StudentPage_Pinar(){
+    public StudentHomeworkPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -19,8 +19,8 @@ public class StudentPage_Pinar {
     @FindBy (xpath = "(//*[@class='active'])[2]")
     public WebElement upcommingHwMenu;
 
-    //@FindBy (xpath = "(//*[@role='row'])[1]")
-    //public List<WebElements> upcommingHwTitles;
+    @FindBy (xpath = "(//*[@role='row'])[1]")
+    public List<WebElement> upcommingHwTitles;
 
     @FindBy (xpath = "//*[@class='fa fa-reorder']")
     public WebElement upcommingActionButton;

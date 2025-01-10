@@ -23,14 +23,29 @@ public class StudentStepDefinitons_Pinar {
         assertTrue(studentPagePinar.studentHwMenu.isEnabled());
 
     }
-    @Then("The user tests that the homework in the {string} section on the opened page are listed under the following headers: Class, Section, Subject, Homework Date, Submission Date, Evaluation Date, Max Marks, Marks Obtained, Note, Status, and Action.")
-    public void the_user_tests_that_the_homework_in_the_section_on_the_opened_page_are_listed_under_the_following_headers_class_section_subject_homework_date_submission_date_evaluation_date_max_marks_marks_obtained_note_status_and_action(String string) {
 
-    }
     @Then("The user tests that the homework details can be accessed and messages can be sent in the {string} section.")
     public void the_user_tests_that_the_homework_details_can_be_accessed_and_messages_can_be_sent_in_the_section(String string) {
 
+        studentPagePinar.upcommingActionButton.click();
+        assertTrue(studentPagePinar.upcommingActionHwDetailsMenu.isDisplayed());
+        studentPagePinar.hwDetailsMessageBox.sendKeys("Done");
+        studentPagePinar.hwDetailsSaveButton.click();
+        assertTrue(studentPagePinar.firstRowOfAssignList.getText().contains("Submitted"));
+        studentPagePinar.closedHwMenu.click();
+        studentPagePinar.upcommingActionButton.click();
+        studentPagePinar.hwDetailsMessageBox.sendKeys("I couldn't complete,sorry!");
+        studentPagePinar.hwDetailsSaveButton.click();
+        assertTrue(studentPagePinar.firstRowOfAssignList.getText().contains("Pending"));
     }
+    @Then("The user tests that the homework in the {string} section on the opened page are listed under the following headers: Class, Section, Subject, Homework Date, Submission Date, Evaluation Date, Max Marks, Marks Obtained, Note, Status, and Action.")
+    public void the_user_tests_that_the_homework_in_the_section_on_the_opened_page_are_listed_under_the_following_headers_class_section_subject_homework_date_submission_date_evaluation_date_max_marks_marks_obtained_note_status_and_action(String string) {
+
+
+
+    }
+
+
     @Then("The user tests that a message can be sent from the {string} section in the {string} section.")
     public void the_user_tests_that_a_message_can_be_sent_from_the_section_in_the_section(String string, String string2) {
 
