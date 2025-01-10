@@ -5,14 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class AdminPageCem {
+public class AdminPage {
 
-    public AdminPageCem(){
-        PageFactory.initElements(Driver.getDriver(),this);
-    }
 
-    @FindBy(xpath = "//*[@href='/products']")
-    public WebElement product;
 
 
 
