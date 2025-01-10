@@ -67,6 +67,11 @@ public class TeacherApplyLeavePage {
     public WebElement saveButtonApplyLeave;
     // TeacherApplyLeavePage >> save
 
+    @FindBy (xpath = "//*[@id=\"DataTables_Table_0\"]")
+    public WebElement tableLeaves;
+    // TeacherApplyLeavePage >> leaves
+
+
 
 
 
