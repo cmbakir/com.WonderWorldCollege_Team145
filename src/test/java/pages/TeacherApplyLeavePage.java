@@ -7,8 +7,8 @@ import utilities.Driver;
 
 public class TeacherApplyLeavePage {
 
-    public TeacherApplyLeavePage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public TeacherApplyLeavePage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
 
@@ -30,68 +30,44 @@ public class TeacherApplyLeavePage {
     // TeacherSideBar >> HumanResource
 
 
-    @FindBy (xpath = "(//*[@href=\"https://qa.wonderworldcollege.com/admin/staff/leaverequest\"])[2]")
+    @FindBy(xpath = "(//*[@href=\"https://qa.wonderworldcollege.com/admin/staff/leaverequest\"])[2]")
     public WebElement linkApplyLeave;
     // TeacherSideBar >> ApplyLeave
 
 
-    @FindBy (xpath = "//*[@onclick=\"addLeave()\"]")
+    @FindBy(xpath = "//*[@onclick=\"addLeave()\"]")
     public WebElement applyLeaveButton;
     // TeacherApplyLeavePage >> ApplyLeaveButton
 
 
-    @FindBy (xpath = "//*[@class=\"form-control date\"]")
+    @FindBy(xpath = "//*[@class=\"form-control date\"]")
     public WebElement dateInputAddLeave;
     // TeacherApplyLeavePage >> ApplyDate
 
-    @FindBy (xpath = "//*[@name=\"leave_type\"]")
+    @FindBy(xpath = "//*[@name=\"leave_type\"]")
     public WebElement dropDownAvailableLeave;
     // TeacherApplyLeavePage >> AvailableLeave
 
 
-    @FindBy (xpath = "//*[@name=\"leave_from_date\"]")
+    @FindBy(xpath = "//*[@name=\"leave_from_date\"]")
     public WebElement dateInputLeaveFromDate;
     // TeacherApplyLeavePage >> LeaveFromDate
 
 
-    @FindBy (xpath = "/*[@name=\"leave_to_date\"]")
+    @FindBy(xpath = "/*[@name=\"leave_to_date\"]")
     public WebElement dateInputLeaveToDate;
     // TeacherApplyLeavePage >> LeaveToDate
 
-    @FindBy (xpath = "//*[@name=\"reason\"]")
+    @FindBy(xpath = "//*[@name=\"reason\"]")
     public WebElement ınputBoxReason;
     // TeacherApplyLeavePage >> Reason
 
 
-    @FindBy (xpath = "//*[@id=\"submitbtn\"]")
+    @FindBy(xpath = "//*[@id=\"submitbtn\"]")
     public WebElement saveButtonApplyLeave;
     // TeacherApplyLeavePage >> save
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/
 
 
 
