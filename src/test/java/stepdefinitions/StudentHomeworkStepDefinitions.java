@@ -4,15 +4,15 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pages.AdminPage;
-import pages.StudentPage_Pinar;
+import pages.StudentHomeworkPage;
 import utilities.ReusableMethods;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class StudentStepDefinitons_Pinar {
+public class StudentHomeworkStepDefinitions {
 
     AdminPage adminPage=new AdminPage();
-    StudentPage_Pinar studentPagePinar=new StudentPage_Pinar();
+    StudentHomeworkPage studentPagePinar=new StudentHomeworkPage();
 
     @Given("The user verifies that there is a clickable and visible {string} menu title in the sidebar.")
     public void the_user_verifies_that_there_is_a_clickable_and_visible_menu_title_in_the_sidebar(String homework) {
