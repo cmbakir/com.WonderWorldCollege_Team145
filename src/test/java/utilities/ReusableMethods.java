@@ -5,6 +5,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.AdminPage;
 
 import java.io.File;
 import java.io.IOException;
@@ -179,5 +180,18 @@ public class ReusableMethods {
         // save the screenshot to the path given
         FileUtils.copyFile(source, finalDestination);
         return target;
+    }
+
+    public static void login (String url, String username, String password){
+        AdminPage adminPage=new AdminPage();
+        Driver.getDriver().get(ConfigReader.getProperty(url));
+
+        adminPage.labelUsername.sendKeys(username);
+        ReusableMethods.bekle(1);
+        adminPage.labelPassword.sendKeys(password);
+        adminPage.SignInButton.click();
+        ReusableMethods.bekle(1);
+
+
     }
 }
