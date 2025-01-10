@@ -7,9 +7,7 @@ import utilities.Driver;
 
 public class AdminPage {
 
-    public AdminPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
-    }
+
 
 
     @FindBy(xpath = "//*[@name='username']")
