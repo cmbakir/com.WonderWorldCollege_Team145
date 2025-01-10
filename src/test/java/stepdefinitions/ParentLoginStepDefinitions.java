@@ -3,9 +3,8 @@ package stepdefinitions;
 import io.cucumber.java.en.*;
 import pages.HomePage;
 import pages.ParentPage;
-import utilities.ConfigReader;
 
-public class ParentStepDefinitions {
+public class ParentLoginStepDefinitions {
 
 ParentPage parentPage=new ParentPage();
 HomePage homePage=new HomePage();
