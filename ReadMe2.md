@@ -53,3 +53,4 @@ git # com.WonderWorldCollege
 | Kisi Resimleri | imageProfileX |
 | ürün resimleri | imageProductX |
 | Linkler        | linkX         |
+| Tablo          | tableX        |
