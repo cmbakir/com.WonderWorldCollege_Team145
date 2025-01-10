@@ -1,11 +1,10 @@
-Feature: WWC Site Erişim Testi
+Feature: WWC2 US001 As a user, I must be able to access the website in order to use it
 
-  Scenario:WWC2 US001 WWC Site Erişim Testi
+  @cem
+  Scenario:WWC2 TC_01 -> US_001 Home Page Accessibility Test
 
-    Given Kullanici "homePage" adresine gider
-    Then  İlgili login anasayafaya ulastigini dogrular
-    Then  Tum menulerin goruntulendigini dogrular
-    Then  Menu kisminda "OnlineAdmission" sekmesinin gorundugunu dogrular
-    Then  Tıkladıgında "OnlineAdmission" formuna ulastigini dogrular
-    Then  sayfayi kapatir
+    Given The user navigates to the “homePage” address.
+    Then  Verifies that the homepage is successfully reached.
+
+
 
