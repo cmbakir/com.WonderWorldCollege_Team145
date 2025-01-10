@@ -13,6 +13,7 @@ public class StudentHomeworkPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+
     @FindBy (xpath = "//*[@class='fa fa-flask ftlayer']")
     public WebElement studentHwMenu;
 
@@ -22,8 +23,11 @@ public class StudentHomeworkPage {
     @FindBy (xpath = "(//*[@role='row'])[1]")
     public List<WebElement> upcommingHwTitles;
 
-    @FindBy (xpath = "//*[@class='fa fa-reorder']")
+    @FindBy (xpath = "//*[@class='btn btn-default btn-xs']")
     public WebElement upcommingActionButton;
+
+    @FindBy (xpath = "(//*[@class='btn btn-default btn-xs'])[2]")
+    public WebElement closedActionButton;
 
     @FindBy (xpath = "//*[@name='message']")
     public WebElement hwDetailsMessageBox;
