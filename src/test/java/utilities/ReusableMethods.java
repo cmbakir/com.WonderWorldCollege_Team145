@@ -6,6 +6,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.AdminPage;
+import pages.StudentLoginPage;
 
 import java.io.File;
 import java.io.IOException;
@@ -183,13 +184,14 @@ public class ReusableMethods {
     }
 
     public static void login (String url, String username, String password){
-        AdminPage adminPage=new AdminPage();
+        StudentLoginPage studentLoginPage=new StudentLoginPage();
         Driver.getDriver().get(ConfigReader.getProperty(url));
 
-        adminPage.labelUsername.sendKeys(username);
-        ReusableMethods.bekle(1);
-        adminPage.labelPassword.sendKeys(password);
-        adminPage.SignInButton.click();
+        //studentLoginPage.studentLoginUsername.click();
+        studentLoginPage.studentLoginUsername.sendKeys(username);
+        ReusableMethods.bekle(2);
+        studentLoginPage.studentLoginPassword.sendKeys(password);
+        studentLoginPage.studentLoginSignInButton.click();
         ReusableMethods.bekle(1);
 
 
