@@ -12,7 +12,7 @@ public class TeacherApplyLeavePage {
     }
 
 
-    @FindBy(xpath = "//*[@name='username']")
+    @FindBy(xpath = "//*[@class=\"form-username form-control\"]")
     public WebElement labelTeacherUsername;
     // TeacherLoginPage >> username
 
@@ -20,8 +20,8 @@ public class TeacherApplyLeavePage {
     public WebElement labelTeacherPassword;
     // TeacherLoginPage >> password
 
-    @FindBy(xpath = "//*[@class='btn']")
-    public WebElement TeacherSignInButton;
+    @FindBy(xpath = "//*[@type='submit']")
+    public WebElement teacherSignInButton;
     // TeacherloginPage >> SignInButton
 
 

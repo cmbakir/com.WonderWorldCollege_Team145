@@ -1,12 +1,14 @@
 package utilities;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.AdminPage;
 import pages.StudentLoginPage;
+import pages.TeacherApplyLeavePage;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,7 +26,7 @@ public class ReusableMethods {
     // Webelement'lerden olusan listeyi,
     // String'lerden olusan listeye ceviren bir method olusturalim
 
-    public static List<String> stringListeyeCevir(List<WebElement> elementListesi){
+    public static List<String> stringListeyeCevir(List<WebElement> elementListesi) {
 
         List<String> stringListesi = new ArrayList<>();
 
@@ -36,47 +38,47 @@ public class ReusableMethods {
         return stringListesi;
     }
 
-    public static void bekle(int saniye){
+    public static void bekle(int saniye) {
 
         try {
-            Thread.sleep( saniye*1000);
+            Thread.sleep(saniye * 1000);
         } catch (InterruptedException e) {
 
         }
 
     }
 
-    public static void switchToWindowByTitle(WebDriver driver , String istenenSayfaTitle){
+    public static void switchToWindowByTitle(WebDriver driver, String istenenSayfaTitle) {
         Set<String> acikOlanWindowlarinWHDSeti = driver.getWindowHandles();
-        for (String eachWhd : acikOlanWindowlarinWHDSeti){
+        for (String eachWhd : acikOlanWindowlarinWHDSeti) {
 
             driver.switchTo().window(eachWhd);
             ReusableMethods.bekle(1);
 
-            if (driver.getTitle().equals(istenenSayfaTitle)){
+            if (driver.getTitle().equals(istenenSayfaTitle)) {
                 break;
             }
 
         }
     }
 
-    public static void switchToWindowByUrl(WebDriver driver , String istenenSayfaUrl){
+    public static void switchToWindowByUrl(WebDriver driver, String istenenSayfaUrl) {
         Set<String> acikOlanWindowlarinWHDSeti = driver.getWindowHandles();
-        for (String eachWhd : acikOlanWindowlarinWHDSeti){
+        for (String eachWhd : acikOlanWindowlarinWHDSeti) {
 
             driver.switchTo().window(eachWhd);
             ReusableMethods.bekle(1);
 
-            if (driver.getCurrentUrl().equals(istenenSayfaUrl)){
+            if (driver.getCurrentUrl().equals(istenenSayfaUrl)) {
                 break;
             }
 
         }
     }
 
-    public static void getScreenshotTumSayfa(WebDriver driver,String ssIsmi){
+    public static void getScreenshotTumSayfa(WebDriver driver, String ssIsmi) {
         // 1.adim olusturacagimiz dosyayolunu hazirlayalim
-        String dosyaYolu = "target/screenshots/"+ssIsmi+".png";
+        String dosyaYolu = "target/screenshots/" + ssIsmi + ".png";
 
         // 2. TakesScreenshot objesi olusturalim
 
@@ -96,13 +98,13 @@ public class ReusableMethods {
         // 5.adim gecici resmi asil dosyaya kopyalayalim
 
         try {
-            FileUtils.copyFile(geciciResim,tumsayfaSS);
+            FileUtils.copyFile(geciciResim, tumsayfaSS);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public static void getScreenshotTumSayfa(WebDriver driver){
+    public static void getScreenshotTumSayfa(WebDriver driver) {
 
         // 240924202034
         LocalDateTime ldt = LocalDateTime.now(); // 2024-09-24T20-23-24-123432
@@ -111,7 +113,7 @@ public class ReusableMethods {
         String tarihEtiketi = ldt.format(istenenFormat);
 
         // 1.adim olusturacagimiz dosyayolunu hazirlayalim
-        String dosyaYolu = "target/screenshots/TumSayfaSS"+tarihEtiketi+".png";
+        String dosyaYolu = "target/screenshots/TumSayfaSS" + tarihEtiketi + ".png";
 
         // 2. TakesScreenshot objesi olusturalim
 
@@ -131,13 +133,13 @@ public class ReusableMethods {
         // 5.adim gecici resmi asil dosyaya kopyalayalim
 
         try {
-            FileUtils.copyFile(geciciResim,tumsayfaSS);
+            FileUtils.copyFile(geciciResim, tumsayfaSS);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public static void getScreenshotWebElement(WebDriver driver, WebElement webElement){
+    public static void getScreenshotWebElement(WebDriver driver, WebElement webElement) {
 
         LocalDateTime ldt = LocalDateTime.now(); // 2024-09-24T20-23-24-123432
 
@@ -145,7 +147,7 @@ public class ReusableMethods {
         String tarihEtiketi = ldt.format(istenenFormat);
 
         // 1.adim olusturacagimiz dosyayolunu hazirlayalim
-        String dosyaYolu = "target/screenshots/WebElementSS"+tarihEtiketi+".png";
+        String dosyaYolu = "target/screenshots/WebElementSS" + tarihEtiketi + ".png";
 
         // 2- kullanacagimiz WebElementi locate edip, WebElement olarak kaydedin
         //    parametre olarak gonderilen webElement'in ss alinacak
@@ -161,7 +163,7 @@ public class ReusableMethods {
         // 5- gecici dosyayi asil dosyaya kopyala
 
         try {
-            FileUtils.copyFile(geciciDosya,webElementSS);
+            FileUtils.copyFile(geciciDosya, webElementSS);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -183,8 +185,8 @@ public class ReusableMethods {
         return target;
     }
 
-    public static void login (String url, String username, String password){
-        StudentLoginPage studentLoginPage=new StudentLoginPage();
+    public static void login(String url, String username, String password) {
+        StudentLoginPage studentLoginPage = new StudentLoginPage();
         Driver.getDriver().get(ConfigReader.getProperty(url));
 
         //studentLoginPage.studentLoginUsername.click();
@@ -194,6 +196,19 @@ public class ReusableMethods {
         studentLoginPage.studentLoginSignInButton.click();
         ReusableMethods.bekle(1);
 
+    }
 
+    public static void teacherLogin(String url, String username, String password) {
+        TeacherApplyLeavePage teacherApplyLeavePage = new TeacherApplyLeavePage();
+        Driver.getDriver().get(url);
+
+       // teacherApplyLeavePage.labelTeacherUsername.click();
+        teacherApplyLeavePage.labelTeacherUsername.sendKeys(username);
+        ReusableMethods.bekle(1);
+       // teacherApplyLeavePage.labelTeacherPassword.click();
+        teacherApplyLeavePage.labelTeacherPassword.sendKeys(password);
+        ReusableMethods.bekle(1);
+        teacherApplyLeavePage.teacherSignInButton.click();
+        bekle(2);
     }
 }
