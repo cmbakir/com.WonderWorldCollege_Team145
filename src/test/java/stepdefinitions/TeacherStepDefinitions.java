@@ -4,12 +4,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.interactions.Actions;
 import pages.TeacherExaminationPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class TeacherStepDefinitions {
+public class TeacherExaminationStepDefinitions {
     TeacherExaminationPage teacherExaminationPage=new TeacherExaminationPage();
 
     @Given("user clicks {string}")
