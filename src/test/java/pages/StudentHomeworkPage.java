@@ -85,10 +85,12 @@ public class StudentHomeworkPage {
     @FindBy (xpath = "(//*[@type='text'])[4]")
     public WebElement editdailyAssTitleBox;
 
-
-
     @FindBy (xpath = "//*[@id='DataTables_Table_0']")
     public WebElement tableDailyAssList;
+
+
+    @FindBy (xpath = "//*[@class='content']")
+    public WebElement tableMessageControl;
 
 
 
