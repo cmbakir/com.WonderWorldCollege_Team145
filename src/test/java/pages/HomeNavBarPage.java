@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class HomeCanerPage {
+public class HomeNavBarPage {
 
-    public HomeCanerPage(){
+    public HomeNavBarPage(){
         PageFactory.initElements(Driver.getDriver(),this);}
 
     @FindBy(xpath = "//*[@*='logo']")
@@ -19,7 +19,6 @@ public class HomeCanerPage {
     @FindBy(xpath = "//*[text()='Online Admission']")
     public WebElement topbarOnlineAdm;
 
-
     @FindBy(xpath = "//*[text()='Exam Result']")
     public WebElement topbarExamRes;
 
@@ -27,7 +26,7 @@ public class HomeCanerPage {
     public WebElement topbarAboUs;
 
     @FindBy(xpath = "//*[text()='Academics ']")
-    public WebElement topbarAcad;
+    public WebElement topbarAcadDropDw;
 
     @FindBy(xpath = "(//*[text()='Course'])[1]")
     public WebElement topbarCours;
@@ -40,6 +39,36 @@ public class HomeCanerPage {
 
     @FindBy(xpath = "(//*[text()='Contact'])[1]")
     public WebElement topbarContc;
+
+
+    @FindBy(xpath = "//*[text()='Facilities']")
+    public WebElement topbarADDFacilities;
+
+    @FindBy(xpath = "//*[text()='School Uniform']")
+    public WebElement topbarADDSchoolUni;
+
+    @FindBy(xpath = "//*[text()='Principal Message']")
+    public WebElement topbarADDPrincMes;
+
+    @FindBy(xpath = "//*[text()='Know Us']")
+    public WebElement topbarADDKnwUs;
+
+    @FindBy(xpath = "//*[text()='Approach']")
+    public WebElement topbarADDAppr;
+
+    @FindBy(xpath = "//*[text()='Teacher']")
+    public WebElement topbarADDTechr;
+
+    @FindBy(xpath = "//*[text()='Houses & Mentoring']")
+    public WebElement topbarADDHouMent;
+
+    @FindBy(xpath = "//*[text()='Student Council']")
+    public WebElement topbarADDStudCou;
+
+
+    @FindBy(xpath = "//*[text()='Latest News']")
+    public WebElement latestNews;
+
 
 
 

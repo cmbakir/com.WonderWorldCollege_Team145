@@ -23,7 +23,7 @@ git # com.WonderWorldCollege
 
 3. Yaptigi degisiklikleri kucuk commitlerle kendi branchinda saklar. Burada tavsiye edilen sadece sizin yaptiginiz degisikliklerin eklenmesidir.
     * 'git add . kesinlikle kullanilMAMAli'
-    * 'git add (degisiklik yapilan yerin  dosya yolu yani "pat from content root" u)
+    * 'git add (degisiklik yapilan yerin dosya yolu yani "pat from content root" u)
     * 'git commit -m "İsim/tarih/Yapilan Degisiklikler icin bir mesaj yazilir."'
       Örn >>> git commit -m "<Kendi isminiz>/02.07/loginClassEklendi"
 4. git push
@@ -38,16 +38,19 @@ git # com.WonderWorldCollege
 ### Isimlendirmelerde dikaat edilecekler
 ***
 | Element Türü   | Variable name |
-|----------------|--------------|
-| Button         | signInButton |    
+|----------------|---------------|
+| Button         | signInButton  | 
+| DateInput      | dateInputX    | 
+| InputBox       | ınputBoxX     | 
 | Logo           | logoX         |
-| icon           | iconX        |
-| Sadece text    | labelX       |
-| Drop down      | dropDownX    |
-| Radio Button   | radioButtonX |
-| Check box      | checkBoxX    |
-| Tablo Sütünu   | columnX      |
-| Tablo Satiri   | rowX         |
+| icon           | iconX         |
+| Sadece text    | labelX        |
+| Drop down      | dropDownX     |
+| Radio Button   | radioButtonX  |
+| Check box      | checkBoxX     |
+| Tablo Sütünu   | columnX       |
+| Tablo Satiri   | rowX          |
 | Kisi Resimleri | imageProfileX |
 | ürün resimleri | imageProductX |
-| Linkler        | linkX        |
+| Linkler        | linkX         |
+| Tablo          | tableX        |
