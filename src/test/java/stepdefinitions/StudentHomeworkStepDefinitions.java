@@ -135,23 +135,23 @@ public class StudentHomeworkStepDefinitions {
 
 
     }
+
+    @Then("The user views the column fields on the {string} page.")
+    public void the_user_views_the_column_fields_on_the_page(String string) {
+
+        assertTrue(studentHomeworkPage.tableDailyAssList.isDisplayed());
+
+    }
+
     @Then("The user clicks the delete button of the assignment they wish to delete in the {string} section of the assignment list and verifies the {string} message.")
     public void the_user_clicks_the_delete_button_of_the_assignment_they_wish_to_delete_in_the_section_of_the_assignment_list_and_verifies_the_message(String string, String string2) {
 
         studentHomeworkPage.dailyAssignmentDeleteButton.click();
         ReusableMethods.bekle(2);
         driver.switchTo().alert().accept();
-        //driver.switchTo().alert().dismiss();
+        ReusableMethods.bekle(1);
+        assertTrue(studentHomeworkPage.tableMessageControl.getText().contains("Successfully deleted"));
 
-        //***************Success mesajı çıkmadığı için burda assertion yapamıyorum************************
-
-
-
-    }
-    @Then("The user views the column fields on the {string} page.")
-    public void the_user_views_the_column_fields_on_the_page(String string) {
-
-        assertTrue(studentHomeworkPage.tableDailyAssList.isDisplayed());
 
     }
 
