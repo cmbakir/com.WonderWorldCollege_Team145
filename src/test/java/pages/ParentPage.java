@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class ParentPage {
 
     public ParentPage(){
@@ -41,6 +43,45 @@ public class ParentPage {
 
     @FindBy(xpath = "//*[text()='Record Saved Successfully']")
     public WebElement labelSuccessMessage;
+
+    @FindBy(xpath = "//*[text()='My Profile']")
+    public WebElement myProfileMenu;
+
+    @FindBy(xpath = "//*[@class='col-lg-3 col-md-3 col-sm-12']")
+    public WebElement myProfileTable;
+
+    @FindBy(xpath = "//*[@class='nav nav-tabs']")
+    public List<WebElement>  myProfileTitleBar;
+
+    @FindBy(xpath = "//*[@class='widget-user-username']")
+    public WebElement  myProfileUsernameField;
+
+    @FindBy(xpath = "//*[text()='Profile']")
+    public WebElement  myProfileProfile;
+
+    @FindBy(xpath = "(//*[text()='Fees'])[2]")
+    public WebElement  myProfileFees;
+
+    @FindBy(xpath = "//*[text()='Exam']")
+    public WebElement  myProfileExam;
+
+    @FindBy(xpath = "//*[text()='Documents']")
+    public WebElement  myProfileDocuments;
+
+
+    @FindBy(xpath = "//*[@class='tab-content']")
+    public WebElement  myProfileProfileTable;
+
+    @FindBy(xpath = "//*[@class='tab-content']")
+    public WebElement  myProfileFeesTable;
+
+    @FindBy(xpath = "//*[@class='tab-content']")
+    public WebElement  myProfileExamTable;
+
+    @FindBy(xpath = "//*[@class='tab-content']")
+    public WebElement  myProfileDocumentsTable;
+
+
 
 
 
