@@ -4,13 +4,13 @@ Feature: WWC5 US022 Student Information Management
   and complete the enrollment of the applicant students.
 
   Scenario: WWC78 TC_01 -> US022 Verify Online Admission link and search functionality in Student Information
-    Given I am logged in as an admin
-    When I click on the "Student Information" option in the left sidebar
-    Then I should see the "Online Admission" link listed
-    When I click on the "Online Admission" link
-    Then I should see the "Student List" table with the following  headers (Reference No, Student Name, Class, Father Name, Date Of Birth, Gender, Category, Student Mobile Number, Form Status, Enrolled, Created At, Action titles)
-    When I enter a student name in the search box and press Enter
-    Then I should see only the details of the relevant student in the search results
+    Given logged in as an admin
+    When click on the "Student Information" option in the left sidebar
+    Then see the "Online Admission" link listed
+    When click on the "Online Admission" link
+    Then see the "Student List" table with the following  headers (Reference No, Student Name, Class, Father Name, Date Of Birth, Gender, Category, Student Mobile Number, Form Status, Enrolled, Created At, Action titles)
+    When  enter a student name in the search box
+    Then see only the details of the relevant student in the search results
 
 
 
