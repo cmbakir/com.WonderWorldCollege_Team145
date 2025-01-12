@@ -211,4 +211,32 @@ public class ReusableMethods {
         teacherApplyLeavePage.teacherSignInButton.click();
         bekle(2);
     }
+
+
+
+
+
+    public static void adminlogin(String url, String username, String password) {
+        AdminPage adminPage = new AdminPage();
+        Driver.getDriver().get(ConfigReader.getProperty(url));
+
+        adminPage.labelUsername.sendKeys(username);
+        ReusableMethods.bekle(2);
+        adminPage.labelPassword.sendKeys(password);
+        adminPage.SignInButton.click();
+        ReusableMethods.bekle(1);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }
