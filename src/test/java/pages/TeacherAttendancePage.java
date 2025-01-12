@@ -11,7 +11,8 @@ public class TeacherAttendancePage {
 
     @FindBy(xpath = "(//*[@class=\"fa fa-search\"])[3]")
     public WebElement perAttDateTitleText;
-
+    @FindBy(xpath = "(//*[@class=\"fa fa-calendar-check-o ftlayer\"])[2]")
+    public WebElement attendanceButton;
 
 
 
