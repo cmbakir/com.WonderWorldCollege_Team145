@@ -1,6 +1,6 @@
 Feature: WWC2 US001 As a user, I must be able to access the website in order to use it
 
-  @cem
+
   Scenario:WWC17 TC_01 -> US_001 Home Page Accessibility Test
 
     Given The user navigates to the “homePage” address.

@@ -43,6 +43,10 @@ public class AdminPage {
     // Student List >> Table Header
     // (Reference No,Student Name,Class,Father Name,Date Of Birth,Gender,Category,Student,Mobile Number,Form Status,Enrolled,Created At,Action)
 
+    @FindBy (xpath = "(//*[@role='row'])[2]")
+    public WebElement columnfist;
+    // Student List >> 1. satırdaki veriler
+
     @FindBy (xpath = "(//*[@class='sorting'])[1]")
     public WebElement columnReferanceNo;
     // Student List >> Table Title
