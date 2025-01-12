@@ -15,10 +15,10 @@ Feature: WWC5 US022 Student Information Management
 
 
   Scenario: WWC90 TC_02 -> US022 Test for validating the display of Form Status and Enrollment Status in the Student List
-    Given I am logged in as an admin
-    When I click on the "Student Information" option in the left sidebar
-    And I click on the "Online Admission" link
-    Then I should see the "Student List" table
+    Given logged in as an admin
+    When click on the "Student Information" option in the left sidebar
+    And click on the "Online Admission" link
+    Then see the "Student List" table
     And for each row in the "Form Status" column:
       | Condition       | Expected Display |
       | Not Submitted   | Not Submitted    |
@@ -31,32 +31,32 @@ Feature: WWC5 US022 Student Information Management
 
 
   Scenario: WWC91 TC_03 -> US022 Test for validating the functionality of deleting applications
-    Given I am logged in as an admin
-    When I click on the "Student Information" option in the left sidebar
-    And I click on the "Online Admission" link
-    Then I should see the "Student List" table
-    When I click the delete icon under the "Action" column for a specific student
-    Then I should see a confirmation dialog
-    And I confirm the delete action
+    Given logged in as an admin
+    When click on the "Student Information" option in the left sidebar
+    And click on the "Online Admission" link
+    Then see the "Student List" table
+    When click the delete icon under the "Action" column for a specific student
+    Then see a confirmation dialog
+    And confirm the delete action
     Then the table should update
     And the deleted student should no longer be visible in the list
 
 
   Scenario: WWC93 TC_04 -> US022 Test for editing student details and enrolling a student
-    Given I am logged in as an admin
-    When I click on the "Student Information" option in the left sidebar
-    And I click on the "Online Admission" link
-    Then I should see the "Student List" table
-    When I click the "Edit and Enroll" icon for a specific student
-    Then I should see the Online Admission form with pre-filled student details
+    Given logged in as an admin
+    When click on the "Student Information" option in the left sidebar
+    And click on the "Online Admission" link
+    Then see the "Student List" table
+    When click the "Edit and Enroll" icon for a specific student
+    Then see the Online Admission form with pre-filled student details
     And the details should match the student's submitted information
-    When I fill out the "Fees Details" section
+    When fill out the "Fees Details" section
     Then the total fee should be calculated automatically
-    When I click the (+) icon next to the "Fees Details" section
-    Then I should see the fee breakdown details
-    When I fill out all required fields and click the "Save" button
-    Then I should see a confirmation message indicating the save was successful
-    When I click the "Save and Enroll" button
+    When click the (+) icon next to the "Fees Details" section
+    Then see the fee breakdown details
+    When fill out all required fields and click the "Save" button
+    Then see a confirmation message indicating the save was successful
+    When click the "Save and Enroll" button
     Then the student's enrollment status should change to "Enrolled"
 
 
