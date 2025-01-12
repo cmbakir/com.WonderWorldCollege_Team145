@@ -9,7 +9,7 @@ Feature:WWC12 US048 Functional Test of the Homework Menu in the Student Panel
     Then The user tests that the homework details can be accessed and messages can be sent in the "Action" section.
     Then The user tests that a message can be sent from the "Action" section in the "Closed Homework" section.
 
-  @test
+
   Scenario: WWC144 TC_02 -> US048  Functional Test of the Daily Assignment Section of Homework Menu
     Given The user navigates to the relevant URL and logs in.
     Then clicks the homework menu.
