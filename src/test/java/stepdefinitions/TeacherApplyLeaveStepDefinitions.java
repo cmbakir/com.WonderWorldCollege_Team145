@@ -11,6 +11,7 @@ import utilities.ReusableMethods;
 
 public class TeacherApplyLeaveStepDefinitions {
     TeacherApplyLeavePage teacherApplyLeavePage = new TeacherApplyLeavePage();
+    String popUpWindowWH;
 
     @Given("The user logs in as a teacher on the relevant Admin login screen using their username and password.")
     public void the_user_logs_in_as_a_teacher_on_the_relevant_admin_login_screen_using_their_username_and_password() {
@@ -56,7 +57,7 @@ public class TeacherApplyLeaveStepDefinitions {
     @Then("In the opened Add Details window, the fields Apply Date, Available Leave, Leave From Date, Leave To Date, Reason box, and the Save button should be visible and active.")
     public void in_the_opened_add_details_window_the_fields_apply_date_available_leave_leave_from_date_leave_to_date_reason_box_and_the_save_button_should_be_visible_and_active() {
 
-        String popUpWindowWH = Driver.getDriver().getWindowHandle();
+        popUpWindowWH = Driver.getDriver().getWindowHandle();
         Driver.getDriver().switchTo().window(popUpWindowWH);
         Assertions.assertTrue(teacherApplyLeavePage.labelApplyDate.isDisplayed());
         Assertions.assertTrue(teacherApplyLeavePage.dateInputLeaveFromDate.isDisplayed());
@@ -128,6 +129,7 @@ public class TeacherApplyLeaveStepDefinitions {
    @Then("the icon under the Action heading is clicked, the corresponding record is deleted.")
         public void the_icon_under_the_action_heading_is_clicked_the_corresponding_record_is_deleted() {
         teacherApplyLeavePage.iconDeleteAtLeaves.click();
+        ReusableMethods.bekle(2);
         Driver.getDriver().switchTo().alert().accept();
 
 
@@ -135,13 +137,18 @@ public class TeacherApplyLeaveStepDefinitions {
    @Then("The details window of the selected leave record can be accessed by clicking the view icon under the Action heading.")
         public void the_details_window_of_the_selected_leave_record_can_be_accessed_by_clicking_the_view_icon_under_the_action_heading() {
 
+       // Driver.getDriver().switchTo().window(popUpWindowWH);
+        ReusableMethods.bekle(1);
        teacherApplyLeavePage.applyLeaveButton.click();
        ReusableMethods.bekle(2);
        String popUpWindowNewWH = Driver.getDriver().getWindowHandle();
        Driver.getDriver().switchTo().window(popUpWindowNewWH);
+       ReusableMethods.bekle(2);
+       Assertions.assertTrue(teacherApplyLeavePage.labelApplyDate.isDisplayed());
+       ReusableMethods.bekle(1);
 
        teacherApplyLeavePage.dropDownAvailableLeave.click();
-       ReusableMethods.bekle(2);
+       ReusableMethods.bekle(1);
 
        Select select = new Select(teacherApplyLeavePage.dropDownAvailableLeave);
        select.selectByValue("2");
@@ -154,17 +161,18 @@ public class TeacherApplyLeaveStepDefinitions {
        ReusableMethods.bekle(2);
        teacherApplyLeavePage.dateChoiceLeaveToDate.click();
 
-       teacherApplyLeavePage.inputBoxReason.sendKeys("They will deliver the new car I will purchase.");
+       teacherApplyLeavePage.inputBoxReason.sendKeys("They will deliver the new house I purchased.");
        ReusableMethods.bekle(2);
 
        teacherApplyLeavePage.saveButtonApplyLeave.click();
-       ReusableMethods.bekle(6);
+       ReusableMethods.bekle(5);
 
 
         teacherApplyLeavePage.iconViewAtLeaves.click();
-        ReusableMethods.bekle(4);
+        ReusableMethods.bekle(6);
        String popUpViewWindowWH = Driver.getDriver().getWindowHandle();
        Driver.getDriver().switchTo().window(popUpViewWindowWH);
+       ReusableMethods.bekle(2);
        Assertions.assertTrue(teacherApplyLeavePage.tableViewAtLeaves.isDisplayed());
        Assertions.assertTrue(teacherApplyLeavePage.tableViewAtLeaves.getText().contains("Details"));
 

@@ -109,11 +109,11 @@ public class TeacherApplyLeavePage {
     public WebElement labelActionAtLeaves;
     // TeacherApplyLeavePage >> Apply Leave
 
-    @FindBy (xpath = "(//*[@data-toggle='tooltip'])[8]")
+    @FindBy (xpath = "//*[@class ='fa fa-remove']")
     public WebElement iconDeleteAtLeaves;
     // TeacherApplyLeavePage >> Apply Leave
 
-    @FindBy (xpath = "(//*[@data-toggle='tooltip'])[7]")
+    @FindBy (xpath = "(//*[@class='fa fa-reorder'])[1]")
     public WebElement iconViewAtLeaves;
     // TeacherApplyLeavePage >> Apply Leave
 
