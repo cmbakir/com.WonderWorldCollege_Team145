@@ -139,12 +139,12 @@ public class AdminPage {
     public WebElement labelTotalFees;
     // Edit Online Admission >> Total Fees
 
-    @FindBy (xpath = "//a[@class='display-inline box-plus-panel collapsed']")
+    @FindBy (xpath = "(//*[@class='font14'])[1]")
     public WebElement iconPlusFeesDetails;
     // Edit Online Admission >> + icon Total Fees
 
 
-    @FindBy (xpath = "(//li[@class='list-group-item'])[7]")
+    @FindBy (xpath = "(//li[@class='list-group-item'])[2]")
     public WebElement rowFeesDetail;
     // Edit Online Admission >>   Table Fees detail
 
