@@ -47,17 +47,52 @@ public class StudentHomeworkPage {
     @FindBy (xpath = "//*[@class='btn btn-sm btn-primary']")
     public WebElement addDailyAssignmentButton;
 
+    @FindBy (xpath = "//*[text()=' Daily Assignment List']")
+    public WebElement dailyAssignmentListLabel;
+
+
+
     @FindBy (xpath = "//*[@id='subject']")
     public WebElement addDailyAssignSubjectButton;
 
     @FindBy (xpath = "//*[@id='title']")
     public WebElement addDailyAssignTitleButton;
 
+    @FindBy (xpath = "//*[text()='Add Daily Assignment']")
+    public WebElement labeladdDailyAssign;
+
+
+    @FindBy (xpath = "//*[@value='92']")
+    public WebElement firstOptionOfSubject;
+
+
     @FindBy (xpath = "(//*[text()='Save'])[1]")
     public WebElement addDailyAssignSaveButton;
 
     @FindBy (xpath = "(//*[@role='row'])[2]")
     public WebElement firstRowOfAssignList;
+
+
+    @FindBy (xpath = "//*[@class='fa fa-pencil']")
+    public WebElement dailyAssignmentEditButton;
+
+    @FindBy (xpath = "//*[@class='fa fa-remove']")
+    public WebElement dailyAssignmentDeleteButton;
+
+    @FindBy (xpath = "(//*[@class='btn btn-info pull-right'])[2]")
+    public WebElement editdailyAssSaveButton;
+
+    @FindBy (xpath = "(//*[@type='text'])[4]")
+    public WebElement editdailyAssTitleBox;
+
+    @FindBy (xpath = "//*[@id='DataTables_Table_0']")
+    public WebElement tableDailyAssList;
+
+
+    @FindBy (xpath = "//*[@class='content']")
+    public WebElement tableMessageControl;
+
+
 
 
 
