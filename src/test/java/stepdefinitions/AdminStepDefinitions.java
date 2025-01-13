@@ -145,8 +145,7 @@ public class AdminStepDefinitions {
     @When("the {string} section is completed, it is verified that the total fee is calculated automatically")
     public void the_section_is_completed_it_is_verified_that_the_total_fee_is_calculated_automatically(String string) {
 
-        //JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        //js.executeScript("arguments[0].scrollIntoView();",adminPage.checkBoxFees);
+
         ReusableMethods.bekle(2);
         adminPage.checkBoxFees.click();
         ReusableMethods.bekle(2);
@@ -155,8 +154,6 @@ public class AdminStepDefinitions {
 
     @When("the plus icon next to the {string} section is clicked")
     public void the_plus_icon_next_to_the_section_is_clicked(String string) {
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("arguments[0].scrollIntoView();",adminPage.iconPlusFeesDetails);
         adminPage.iconPlusFeesDetails.click();
         ReusableMethods.bekle(2);
     }
