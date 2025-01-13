@@ -97,9 +97,19 @@ public class AdminPage {
     public WebElement columnAction;
     // Student List >> Table Title
 
+
+    @FindBy (xpath = "(//*[@class='table table-striped table-bordered table-hover student-list dataTable no-footer'])")
+    public List<WebElement> tableStudentlist;
+    // Student List >> Table list
+
     @FindBy (xpath = "(//*[@class='fa fa-remove'])[1]")
     public WebElement iconDelete;
     // Student List >> Action >> Delete Icon
+
+    @FindBy (xpath = "(//*[@class='alert alert-success text-left'])[1]")
+    public WebElement successAlert;
+    // Student List >> Action >> Delete >> Record Delete, upted Successfully
+
 
     @FindBy (xpath = "(//*[@class='fa fa-pencil'])[1]")
     public WebElement iconEditAndEnroll;
@@ -121,4 +131,38 @@ public class AdminPage {
     public WebElement iconNotEnrolled;
     // Student List >> Enrolled >> - negative Icon
 
+    @FindBy (id = "admission_no")
+    public WebElement inputBoxAdmissionNo;
+    // Edit Online Admission >> Admission No input
+
+    @FindBy (xpath = "(//*[@class='float-right bmedium total_fees_alloted'])[1]")
+    public WebElement labelTotalFees;
+    // Edit Online Admission >> Total Fees
+
+    @FindBy (xpath = "//a[@class='display-inline box-plus-panel collapsed']")
+    public WebElement iconPlusFeesDetails;
+    // Edit Online Admission >> + icon Total Fees
+
+
+    @FindBy (xpath = "(//li[@class='list-group-item'])[7]")
+    public WebElement rowFeesDetail;
+    // Edit Online Admission >>   Table Fees detail
+
+    @FindBy (xpath = "(//*[@class='fee_group_chk vertical-middle'])[4]")
+    public WebElement checkBoxFees;
+    // Edit Online Admission >>   Total Fees check box
+
+
+    @FindBy (xpath = "(//*[@class='btn btn-info'])[1]")
+    public WebElement saveButton;
+    // Edit Online Admission >>   Save Button
+
+
+    @FindBy (xpath = "(//*[@class='btn btn-info'])[2]")
+    public WebElement saveAndEnrollButton;
+    // Edit Online Admission >>   Save and Enroll Button
+
+
+    @FindBy (xpath = "(//*[@class='pagetitleh-whitebg'])[1]")
+    public WebElement labelEditOnlineAdmission;
 }
