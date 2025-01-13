@@ -1,5 +1,5 @@
 
-@test
+
 Feature: WWC31 US054 Parent Login Test
 
   Scenario:WWC74 TC 01 -> US054 WWC Parent Login page Form visibility test
