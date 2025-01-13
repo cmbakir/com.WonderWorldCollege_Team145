@@ -20,13 +20,15 @@ public class HomePageOnlineAdmissionStepDefinitions {
     @Given("user goes to the {string}")
     public void user_goes_to_the(String url) {
 
-        Driver.getDriver().get(ConfigReader.getProperty("homePage"));
+        Driver.getDriver().get(ConfigReader.getProperty(url));
     }
+
     @Then("click on the Online Admission menu heading in the top bar")
     public void click_on_the_online_admission_menu_heading_in_the_top_bar() {
 
         Driver.getDriver().findElement(By.linkText("Online Admission")).click();
     }
+
     @Then("confirms that it redirects to the Online Admission page")
     public void confirms_that_it_redirects_to_the_online_admission_page() {
 
