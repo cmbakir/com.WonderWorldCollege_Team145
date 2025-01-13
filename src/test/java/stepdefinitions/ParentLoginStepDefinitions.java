@@ -11,7 +11,7 @@ import utilities.ReusableMethods;
 public class ParentLoginStepDefinitions {
 
     ParentLoginPage parentLoginPage=new ParentLoginPage();
-    //WWC2 TC 01 -> US054 WWC Parent Login page Form visibility test
+    //WWC74 TC 01 -> US054 WWC Parent Login page Form visibility test
     @Given("User goes to homePage address")
     public void user_goes_to_home_page_address() {
         ReusableMethods.bekle(1);
@@ -46,7 +46,7 @@ public class ParentLoginStepDefinitions {
         ReusableMethods.bekle(1);
     }
 
-    //WWC2 TC 02 -> US054 WWC Parent Login page
+    //WWC75 TC 02 -> US054 WWC Parent Login page
 
     @Given("User enters username.")
     public void user_enters_username() {
@@ -90,7 +90,6 @@ public class ParentLoginStepDefinitions {
     public void user_sees_warning_message(String expectedErrorText) {
 
         ReusableMethods.bekle(2);
-        expectedErrorText="Invalid Username Or Password";
         String actualErrorText=parentLoginPage.ErrorText.getText();
         ReusableMethods.bekle(2);
 
@@ -111,10 +110,7 @@ public class ParentLoginStepDefinitions {
         ReusableMethods.bekle(2);
     }
 
-    @Then("User should be able to close the page.")
-    public void user_should_be_able_to_close_the_page() {
-        Driver.quitDriver();
-    }
+
 
     //WWC77 TC 04 -> US054 WWC Parent Forgot Password activation test
     @Given("The user clicks on the Forgot Password text on the login page.")

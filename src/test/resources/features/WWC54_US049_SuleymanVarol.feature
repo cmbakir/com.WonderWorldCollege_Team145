@@ -1,9 +1,9 @@
 
-@test
+
 Feature: WWC54 US049 US_049 After logging into the Student Panel as a user,I should be able to access the "Online Exam" page,make changes, and view Exam Details.
 
 
-  Scenario: WWC TC01 -> US049 Test of seeing and clicking the Online Exam menu in the sidebar of the student panel and viewing the titles in the Upcoming Exam that opens.
+  Scenario: WWC148 TC01 -> US049 Test of seeing and clicking the Online Exam menu in the sidebar of the student panel and viewing the titles in the Upcoming Exam that opens.
 
 
 
@@ -28,7 +28,7 @@ Feature: WWC54 US049 US_049 After logging into the Student Panel as a user,I sho
 
 
 
-  Scenario: WWC TC02 -> US049 Test of being able to view and click on the "View" button in the Action section of Upcoming Exams and see the fields on the page that opens.
+  Scenario: WWC149 TC02 -> US049 Test of being able to view and click on the "View" button in the Action section of Upcoming Exams and see the fields on the page that opens.
 
     Given User goes to homePage address
     Then  Clicks on Login button on homepage
@@ -41,7 +41,7 @@ Feature: WWC54 US049 US_049 After logging into the Student Panel as a user,I sho
     Then  Then the user sees the fields of the View page that opens and validates the page.
 
 
-  Scenario: WWC TC03 -> US049 User can view the titles in the Closed Exam section of the Online Exam menu.
+  Scenario: WWC150 TC03 -> US049 User can view the titles in the Closed Exam section of the Online Exam menu.
 
     Given User goes to homePage address
     Then  Clicks on Login button on homepage
@@ -62,7 +62,7 @@ Feature: WWC54 US049 US_049 After logging into the Student Panel as a user,I sho
     Then  The user sees the Action heading in the Closed Exam section of the Online Exam page.
 
 
-  Scenario: WWC TC04 -> US049 Test of being able to view and click on the "View" button in the Action section of Closed Exam and see the fields on the page that opens.
+  Scenario: WWC151 TC04 -> US049 Test of being able to view and click on the "View" button in the Action section of Closed Exam and see the fields on the page that opens.
 
     Given User goes to homePage address
     Then  Clicks on Login button on homepage

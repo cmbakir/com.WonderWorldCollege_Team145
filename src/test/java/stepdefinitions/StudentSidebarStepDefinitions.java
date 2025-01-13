@@ -14,7 +14,7 @@ public class StudentSidebarStepDefinitions {
     ParentLoginPage parentLoginPage=new ParentLoginPage();
     StudentSidebarPage studentSidebarPage=new StudentSidebarPage();
 
-    //WWC TC01 -> US049 Test of seeing and clicking the Online Exam menu in the sidebar
+    //WWC148 TC01 -> US049 Test of seeing and clicking the Online Exam menu in the sidebar
     // of the student panel and viewing the titles in the Upcoming Exam that opens.
 
     @Given("User enters student username.")
@@ -102,7 +102,7 @@ public class StudentSidebarStepDefinitions {
         ReusableMethods.bekle(1);
     }
 
-    //WWC TC02 -> US049 Test of being able to view and click on the "View" button in the Action section
+    //WWC149 TC02 -> US049 Test of being able to view and click on the "View" button in the Action section
     // of Upcoming Exams and see the fields on the page that opens.
 
     @Given("The user sees the View in the Action section of Upcoming Exams.")
@@ -121,7 +121,7 @@ public class StudentSidebarStepDefinitions {
 
     }
 
-    //WWC TC03 -> US049 User can view the titles in the Closed Exam section of the Online Exam menu.
+    //WWC150 TC03 -> US049 User can view the titles in the Closed Exam section of the Online Exam menu.
 
     @Then("The user clicks on the Closed Exam section on the Online Exam page.")
     public void the_user_clicks_on_the_closed_exam_section_on_the_online_exam_page() {
@@ -179,7 +179,7 @@ public class StudentSidebarStepDefinitions {
         ReusableMethods.bekle(1);
     }
 
-    //WWC TC04 -> US049 Test of being able to view and click on the "View" button
+    //WWC151 TC04 -> US049 Test of being able to view and click on the "View" button
     // in the Action section of Closed Exam and see the fields on the page that opens.
 
     @Given("The user sees the View in the Action section of Closed Exam.")
