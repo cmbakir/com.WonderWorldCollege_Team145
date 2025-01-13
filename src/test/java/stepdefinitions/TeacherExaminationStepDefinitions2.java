@@ -1,15 +1,26 @@
 package stepdefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import pages.TeacherExaminationPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
+
+import static utilities.Driver.driver;
 
 public class TeacherExaminationStepDefinitions2 {
     TeacherExaminationPage teacherExaminationPage=new TeacherExaminationPage();
+    Actions actions=new Actions(Driver.getDriver());
+    Faker faker=new Faker();
+
 
     @Given("user clicks {string}")
     public void user_clicks(String adminAndTeacherLogin) {
@@ -52,7 +63,7 @@ public class TeacherExaminationStepDefinitions2 {
     }
     @Given("verifies ExamTypeDropDownMenu")
     public void verifies_exam_type_drop_down_menu() {
-        Assertions.assertTrue(teacherExaminationPage.ExamTypeMenu.isDisplayed());
+        Assertions.assertTrue(teacherExaminationPage.dropdownExamType.isDisplayed());
 
     }
     @Then("verifies description area")
@@ -67,6 +78,66 @@ public class TeacherExaminationStepDefinitions2 {
     @And("verifies redirecting examGroupPage")
     public void verifiesRedirectingExamGroupPage() {
         teacherExaminationPage.ExamGroupPage.isDisplayed();
+    }
+
+    @Given("user enters new name")
+    public void user_enters_new_name() {
+        teacherExaminationPage.nameSection.sendKeys(faker.name().name());
+    }
+    @Given("selects exam type from dropdown menu")
+    public void selects_exam_type_from_dropdown_menu() {
+        // Select select=new Select(teacherExaminationPage.ExamTypeMenu);
+        //select sele
+        teacherExaminationPage.dropdownExamType.click();
+        ReusableMethods.bekle(3);
+        Select selectExam=new Select(teacherExaminationPage.dropdownExamType);
+        selectExam.selectByValue("average_passing");
+    }
+    @Then("types any description to box")
+    public void types_any_description_to_box() {
+        teacherExaminationPage.descriptionArea.click();
+        teacherExaminationPage.descriptionArea.sendKeys(faker.name().name());
+    }
+    @Then("click save button")
+    public void click_save_button() {
+        teacherExaminationPage.submitButton.click(); // save button new exam group
+
+    }
+    @Then("verifies recorded new exam group")
+    public void verifies_recorded_new_exam_group() {
+        teacherExaminationPage.successNewExamMessage.isDisplayed();
+    }
+
+    @Given("user clicks add button  under action buttons")
+    public void user_clicks_add_button_under_action_buttons() {
+
+        teacherExaminationPage.addButton.click();
+    }
+
+    @Given("verify redirected Exam List Page")
+    public void verify_redirected_exam_list_page() {
+        teacherExaminationPage.directingExamList.isDisplayed();
+    }
+
+    @Given("User clicks delete button under action section")
+    public void user_clicks_delete_button_under_action_section() {
+        teacherExaminationPage.deletebutton.click();
+    }
+
+    @Given("user clicks edit button under actions buton")
+    public void userClicksEditButtonUnderActionsButon() {
+      teacherExaminationPage.editbutton.click();
+    }
+
+
+    @Then("confirm deleted exam group")
+    public void confirm_deleted_exam_group() {
+      teacherExaminationPage.deletebutton.click();
+    }
+    @Then("clicks tamam from alert")
+    public void clicks_tamam_from_alert() {
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
     }
 
 
