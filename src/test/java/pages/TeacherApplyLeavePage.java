@@ -40,42 +40,86 @@ public class TeacherApplyLeavePage {
     // TeacherApplyLeavePage >> ApplyLeaveButton
 
 
-    @FindBy (xpath = "//*[@class=\"form-control date\"]")
-    public WebElement dateInputAddLeave;
+    @FindBy (xpath = "(//*[text()='Apply Date'])[3]")
+    public WebElement labelApplyDate;
     // TeacherApplyLeavePage >> ApplyDate
 
-    @FindBy (xpath = "//*[@name=\"leave_type\"]")
+    @FindBy (xpath = "//*[@name='leave_type']")
     public WebElement dropDownAvailableLeave;
     // TeacherApplyLeavePage >> AvailableLeave
 
 
-    @FindBy (xpath = "//*[@name=\"leave_from_date\"]")
+    @FindBy (xpath = "//*[@name='leave_from_date']")
     public WebElement dateInputLeaveFromDate;
     // TeacherApplyLeavePage >> LeaveFromDate
 
+    @FindBy (xpath = "(//*[@class='day'])[18]")
+    public WebElement dateChoiceLeaveFromDate;
 
-    @FindBy (xpath = "/*[@name=\"leave_to_date\"]")
+
+    @FindBy (xpath = "//*[@name='leave_to_date']")
     public WebElement dateInputLeaveToDate;
     // TeacherApplyLeavePage >> LeaveToDate
 
-    @FindBy (xpath = "//*[@name=\"reason\"]")
-    public WebElement ınputBoxReason;
+    @FindBy (xpath = "(//*[@class='day'])[21]")
+    public WebElement dateChoiceLeaveToDate;
+
+
+    @FindBy (xpath = "//*[@id='reason']")
+    public WebElement inputBoxReason;
     // TeacherApplyLeavePage >> Reason
 
 
-    @FindBy (xpath = "//*[@id=\"submitbtn\"]")
+    @FindBy (xpath = "//*[@id='submitbtn']")
     public WebElement saveButtonApplyLeave;
     // TeacherApplyLeavePage >> save
 
-    @FindBy (xpath = "//*[@id=\"DataTables_Table_0\"]")
+    @FindBy (xpath = "//*[@class='odd']")
+    public WebElement row1stLeave;
+
+    @FindBy (xpath = "//*[@id='DataTables_Table_0']")
     public WebElement tableLeaves;
     // TeacherApplyLeavePage >> leaves
 
+    @FindBy (xpath = "//*[@aria-label='Staff: activate to sort column ascending']")
+    public WebElement labelStaffAtLeaves;
+    // TeacherApplyLeavePage >> Apply Leave
 
+    @FindBy (xpath = "//*[@aria-label='Leave Type: activate to sort column ascending']")
+    public WebElement labelLeaveTypeAtLeaves;
+    // TeacherApplyLeavePage >> Apply Leave
 
+    @FindBy (xpath = "//*[@aria-label='Leave Date: activate to sort column ascending']")
+    public WebElement labelLeaveDateAtLeaves;
+    // TeacherApplyLeavePage >> Apply Leave
 
+    @FindBy (xpath = "//*[@aria-label='Days: activate to sort column ascending']")
+    public WebElement labelDaysAtLeaves;
+    // TeacherApplyLeavePage >> Apply Leave
 
+    @FindBy (xpath = "//*[@aria-label='Status: activate to sort column ascending']")
+    public WebElement labelApplyDateAtLeaves;
+    // TeacherApplyLeavePage >> Apply Leave
 
+    @FindBy (xpath = "//*[@aria-label='Status: activate to sort column ascending']")
+    public WebElement labelStatusAtLeaves;
+    // TeacherApplyLeavePage >> Apply Leave
+
+    @FindBy (xpath = "//*[@aria-label='Action: activate to sort column ascending']")
+    public WebElement labelActionAtLeaves;
+    // TeacherApplyLeavePage >> Apply Leave
+
+    @FindBy (xpath = "(//*[@data-toggle='tooltip'])[8]")
+    public WebElement iconDeleteAtLeaves;
+    // TeacherApplyLeavePage >> Apply Leave
+
+    @FindBy (xpath = "(//*[@data-toggle='tooltip'])[7]")
+    public WebElement iconViewAtLeaves;
+    // TeacherApplyLeavePage >> Apply Leave
+
+    @FindBy (xpath = "(//*[@class='modal-content'])[1]")
+    public WebElement tableViewAtLeaves;
+    // TeacherApplyLeavePage >> Apply Leave
 
 
 
