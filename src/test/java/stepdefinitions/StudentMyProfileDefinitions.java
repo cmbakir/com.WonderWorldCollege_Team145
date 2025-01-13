@@ -5,22 +5,25 @@ import org.junit.jupiter.api.Assertions;
 import pages.StudentMyProfilePage;
 import utilities.ReusableMethods;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class StudentMyProfileDefinitions {
 
     StudentMyProfilePage studentMyProfilePage = new StudentMyProfilePage();
 
     @Given("the user successfully logs in to the student page")
     public void the_user_successfully_logs_in_to_the_student_page() {
-
         studentMyProfilePage.studentLogin();
-        Assertions.assertTrue(studentMyProfilePage.welcome.isDisplayed());
+
+        assertTrue(studentMyProfilePage.welcome.isDisplayed());
+        assertTrue(studentMyProfilePage.welcome.isEnabled());
 
     }
     @Then("my profile menu should be displayed and clickable in the sidebar")
     public void my_profile_menu_should_be_displayed_and_clickable_in_the_sidebar() {
 
-        Assertions.assertTrue(studentMyProfilePage.sidebarMyPro.isDisplayed());
-
+        assertTrue(studentMyProfilePage.sidebarMyPro.isDisplayed());
+        assertTrue(studentMyProfilePage.sidebarMyPro.isEnabled());
     }
 
     @Given("On the page that opens, I should be able to see the box consisting of Student's name, Admission No, Role Number, Class, Section, Gender, barcode field")
@@ -29,13 +32,13 @@ public class StudentMyProfileDefinitions {
         studentMyProfilePage.studentLogin();
         studentMyProfilePage.sidebarMyPro.click();
 
-        Assertions.assertTrue(studentMyProfilePage.name.isDisplayed());
-        Assertions.assertTrue(studentMyProfilePage.admmNo.isDisplayed());
-        Assertions.assertTrue(studentMyProfilePage.rollNm.isDisplayed());
-        Assertions.assertTrue(studentMyProfilePage.clas.isDisplayed());
-        Assertions.assertTrue(studentMyProfilePage.section.isDisplayed());
-        Assertions.assertTrue(studentMyProfilePage.gender.isDisplayed());
-        Assertions.assertTrue(studentMyProfilePage.barcode.isDisplayed());
+        assertTrue(studentMyProfilePage.name.isDisplayed());
+        assertTrue(studentMyProfilePage.admmNo.isDisplayed());
+        assertTrue(studentMyProfilePage.rollNm.isDisplayed());
+        assertTrue(studentMyProfilePage.clas.isDisplayed());
+        assertTrue(studentMyProfilePage.section.isDisplayed());
+        assertTrue(studentMyProfilePage.gender.isDisplayed());
+        assertTrue(studentMyProfilePage.barcode.isDisplayed());
     }
 
     @Given("As a student, I should be able to see that the My Profile page consists of Profile, Exam, and Documents menus in the navbar")
@@ -43,26 +46,27 @@ public class StudentMyProfileDefinitions {
 
         studentMyProfilePage.studentLogin();
         studentMyProfilePage.sidebarMyPro.click();
-
         ReusableMethods.bekle(2);
 
-        Assertions.assertTrue(studentMyProfilePage.profile.isDisplayed());
-        Assertions.assertTrue(studentMyProfilePage.exam.isDisplayed());
-        Assertions.assertTrue(studentMyProfilePage.documents.isDisplayed());
+        assertTrue(studentMyProfilePage.profile.isDisplayed());
+        assertTrue(studentMyProfilePage.profile.isEnabled());
+        assertTrue(studentMyProfilePage.exam.isDisplayed());
+        assertTrue(studentMyProfilePage.exam.isEnabled());
+        assertTrue(studentMyProfilePage.documents.isDisplayed());
+        assertTrue(studentMyProfilePage.documents.isEnabled());
     }
 
     @Given("I should be able to see the relevant fields when I log in to profil as a user")
     public void i_should_be_able_to_see_the_relevant_fields_when_i_log_in_to_profil_as_a_user() {
 
         studentMyProfilePage.studentLogin();
-
         ReusableMethods.bekle(1);
         studentMyProfilePage.sidebarMyPro.click();
 
-        Assertions.assertTrue(studentMyProfilePage.adressdetails.isDisplayed());
-        Assertions.assertTrue(studentMyProfilePage.partGuardnDet.isDisplayed());
-        Assertions.assertTrue(studentMyProfilePage.miscelDets.isDisplayed());
-        Assertions.assertTrue(studentMyProfilePage.guardiaName.isDisplayed());
+        assertTrue(studentMyProfilePage.adressdetails.isDisplayed());
+        assertTrue(studentMyProfilePage.partGuardnDet.isDisplayed());
+        assertTrue(studentMyProfilePage.miscelDets.isDisplayed());
+        assertTrue(studentMyProfilePage.guardiaName.isDisplayed());
     }
 
     @Given("I should be able to see the relevant fields when I log in to Exam as a user")
@@ -70,13 +74,10 @@ public class StudentMyProfileDefinitions {
 
         studentMyProfilePage.studentLogin();
         studentMyProfilePage.sidebarMyPro.click();
-
         studentMyProfilePage.exam.click();
 
-        Assertions.assertTrue(studentMyProfilePage.examNamefirst.isDisplayed());
+        assertTrue(studentMyProfilePage.examNamefirst.isDisplayed());
     }
-
-
     @Given("I should be able to go to the relevant fields when I log in to Documents as a user")
     public void i_should_be_able_to_go_to_the_relevant_fields_when_ı_log_in_to_documents_as_a_user() {
 
@@ -84,8 +85,7 @@ public class StudentMyProfileDefinitions {
         studentMyProfilePage.sidebarMyPro.click();
 
         studentMyProfilePage.documents.click();
-
-        Assertions.assertTrue(studentMyProfilePage.documentNamefirst.isDisplayed());
+        assertTrue(studentMyProfilePage.documentNamefirst.isDisplayed());
     }
 
 }

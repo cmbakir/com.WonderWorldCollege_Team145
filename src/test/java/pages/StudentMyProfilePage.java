@@ -91,7 +91,7 @@ public class StudentMyProfilePage {
         wait.until(ExpectedConditions.visibilityOf(studentEmailBox));
 
 
-        studentEmailBox.sendKeys(ConfigReader.getProperty("studentid"));
+        studentEmailBox.sendKeys(ConfigReader.getProperty("studentidc"));
         studentPasswordBox.sendKeys(ConfigReader.getProperty("studentpass"));
         studentSubmitButton.click();
     }
