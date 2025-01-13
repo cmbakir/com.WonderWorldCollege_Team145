@@ -2,7 +2,7 @@ Feature: WWC-50 User Online Admission Test
 
   @smoke
   Scenario: WWC-105 US003 As a user, viewing the Online Admission page and Basic Details and data entry test
-    Given user goes to the 'home page'
+    Given user goes to the 'homePage'
     Then click on the Online Admission menu heading in the top bar
     And confirms that it redirects to the Online Admission page
     Then verifies that the school enrollment criteria are displayed in the Instructions section on the page

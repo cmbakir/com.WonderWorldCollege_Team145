@@ -16,19 +16,19 @@ public class HomePageOnlineAdmissionPage {
     @FindBy(xpath = "(//*[@class='col-md-12'])[1]")
     public WebElement labelInstructions;
 
-    @FindBy(className = "onlineformbtn mt10")
+    @FindBy(xpath = "//*[@class='col-lg-2 col-md-2 col-sm-5']")
     public WebElement submitButton;
 
 
     // Basic Details
 
-    @FindBy(id = "class_id")
+    @FindBy(xpath = "//*[@id='class_id']")
     public WebElement dropDownClass;
 
-    @FindBy(id = "firstname")
+    @FindBy(xpath = "//*[@id='firstname']")
     public WebElement inputBoxFirstName;
 
-    @FindBy(id = "lastname")
+    @FindBy(xpath = "//*[@id='lastname']")
     public WebElement inputBoxLastName;
 
     @FindBy(xpath = "//*[@name='gender']")
