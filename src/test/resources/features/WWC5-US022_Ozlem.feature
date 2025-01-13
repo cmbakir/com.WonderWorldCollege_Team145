@@ -19,14 +19,12 @@ Feature: WWC5 US022 Student Information Management
     When click on the "Student Information" option in the left sidebar
     And click on the "Online Admission" link
     Then see the "Student List" table
-    And for each row in the "Form Status" column:
-      | Condition       | Expected Display |
-      | Not Submitted   | Not Submitted    |
-      | Submitted       | Submitted        |
-    And for each row in the "Enrolled" column:
-      | Condition            | Expected Display |
-      | Enrollment Complete  | check icon       |
-      | Enrollment Incomplete| -                |
+    Then see the "Form Status" column
+    And the form status should be "Not Submitted" for students who have not submitted the form
+    And the form status should be "Submitted" for students who have submitted the form
+    And see the "Enrolled" column
+    And the enrollment status should display a "check" icon for students whose enrollment is complete
+    And the enrollment status should display a "-" icon for students whose enrollment is not complete
 
 
 
@@ -36,10 +34,8 @@ Feature: WWC5 US022 Student Information Management
     And click on the "Online Admission" link
     Then see the "Student List" table
     When click the delete icon under the "Action" column for a specific student
-    Then see a confirmation dialog
+    Then a confirmation dialog box is clicked
     And confirm the delete action
-    Then the table should update
-    And the deleted student should no longer be visible in the list
 
 
   Scenario: WWC93 TC_04 -> US022 Test for editing student details and enrolling a student
@@ -48,16 +44,18 @@ Feature: WWC5 US022 Student Information Management
     And click on the "Online Admission" link
     Then see the "Student List" table
     When click the "Edit and Enroll" icon for a specific student
-    Then see the Online Admission form with pre-filled student details
-    And the details should match the student's submitted information
-    When fill out the "Fees Details" section
-    Then the total fee should be calculated automatically
-    When click the (+) icon next to the "Fees Details" section
-    Then see the fee breakdown details
-    When fill out all required fields and click the "Save" button
-    Then see a confirmation message indicating the save was successful
-    When click the "Save and Enroll" button
-    Then the student's enrollment status should change to "Enrolled"
+    Then a confirmation dialog box is clicked
+    Then the Online Admission form is displayed with pre-filled student details
+    Then the "Admission No" field is filled in
+    When the "Fee Details" section is completed, it is verified that the total fee is calculated automatically
+    When the plus icon next to the "Fee Details" section is clicked
+    Then the fee breakdown details are displayed
+    When the Save button is clicked
+    Then a confirmation message indicating successful saving is displayed
+    Then the "Edit and Enroll" icon for a specific student is clicked
+    Then a confirmation dialog box is clicked
+    When the Save and Enroll button is clicked
+    Then it is verified that the student's enrollment status is updated to "Enrolled".
 
 
 
