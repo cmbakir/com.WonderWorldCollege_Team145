@@ -5,6 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TeacherApplyLeavePage {
 
     public TeacherApplyLeavePage(){
@@ -121,7 +124,13 @@ public class TeacherApplyLeavePage {
     public WebElement tableViewAtLeaves;
     // TeacherApplyLeavePage >> Apply Leave
 
-//
+    @FindBy (xpath = "//*[@class='odd']")
+    public List<WebElement> rowTableLeave;
+
+
+
+
+
 
 
 

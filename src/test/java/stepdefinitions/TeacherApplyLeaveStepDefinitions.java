@@ -4,10 +4,15 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pages.TeacherApplyLeavePage;
 import utilities.Driver;
 import utilities.ReusableMethods;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class TeacherApplyLeaveStepDefinitions {
     TeacherApplyLeavePage teacherApplyLeavePage = new TeacherApplyLeavePage();
@@ -121,9 +126,21 @@ public class TeacherApplyLeaveStepDefinitions {
     @Then("It is verified that the status of the leave record is displayed under the Status heading in the Leaves List.")
         public void it_is_verified_that_the_status_of_the_leave_record_is_displayed_under_the_status_heading_in_the_leaves_list() {
 
+
+
+        List<String> rowTableApplyLeaveList = ReusableMethods.getStringList(teacherApplyLeavePage.rowTableLeave);
+        int index = 2;
+        System.out.println(rowTableApplyLeaveList);
+
         }
+
     @Then("Under the Action heading in the Leaves List, the delete icon is displayed for leave records with a status of pending.")
         public void under_the_action_heading_in_the_leaves_list_the_delete_icon_is_displayed_for_leave_records_with_a_status_of_pending() {
+
+
+
+
+
 
         }
    @Then("the icon under the Action heading is clicked, the corresponding record is deleted.")
