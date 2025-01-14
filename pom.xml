@@ -132,7 +132,7 @@
                 <configuration>
                     <parallel>classes</parallel>
                     <forkMode>perthread</forkMode>
-                    <threadCount>1</threadCount> <!-- Ayni anda calisacak thread sayisi -->
+                    <threadCount>1</threadCount> <!- Ayni anda calisacak thread sayisi -->
             <!--     <reuseForks>false</reuseForks>
                 <argLine>-Duser.language=en</argLine>
                 <argLine>-Xmx1024m</argLine>
