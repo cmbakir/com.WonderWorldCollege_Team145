@@ -129,7 +129,7 @@ public class TeacherApplyLeaveStepDefinitions {
 
 
         List<String> rowTableApplyLeaveList = ReusableMethods.getStringList(teacherApplyLeavePage.rowTableLeave);
-        int index = 2;
+        int index = 3;
         System.out.println(rowTableApplyLeaveList);
 
         }
