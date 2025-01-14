@@ -73,6 +73,7 @@ Feature: WWC Sinav Group Olusturma Testi
     @test
 
     Scenario: [TC07]->US_033] Testing if The relevant exam group is deleted
+
       Given User clicks delete button under action section
       Then clicks tamam from alert
       And confirm deleted exam group
