@@ -1,6 +1,6 @@
 Feature:WWC29 US056 Username Change Test for a Parent User
 
-  @test
+  @change
   Scenario: WWC61 TC_01 -> US056 Positive Username Change Test for a Parent User
     Given The user navigates to the parent “homePage” address.
     Then The user views the "Change Password" button from the profile image.
