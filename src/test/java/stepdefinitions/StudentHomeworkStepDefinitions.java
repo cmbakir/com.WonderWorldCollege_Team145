@@ -24,7 +24,8 @@ public class StudentHomeworkStepDefinitions {
 
     AdminPage adminPage=new AdminPage();
     StudentHomeworkPage studentHomeworkPage=new StudentHomeworkPage();
-    WebDriver driver;
+
+
 
     @Given("The user navigates to the relevant URL and logs in.")
     public void the_user_navigates_to_the_relevant_url_and_logs_in() {
@@ -148,7 +149,7 @@ public class StudentHomeworkStepDefinitions {
 
         studentHomeworkPage.dailyAssignmentDeleteButton.click();
         ReusableMethods.bekle(2);
-        driver.switchTo().alert().accept();
+        Driver.getDriver().switchTo().alert().accept();
         ReusableMethods.bekle(1);
         assertTrue(studentHomeworkPage.tableMessageControl.getText().contains("Successfully deleted"));
 
