@@ -130,7 +130,7 @@ public class TeacherApplyLeaveStepDefinitions {
         System.out.println(teacherApplyLeavePage.row1stLeave.getText());
 
 
-        //ArrayList<WebElement> arrayList = new ArrayList<>(teacherApplyLeavePage.rowTableLeave);
+        ArrayList<WebElement> arrayList = new ArrayList<>(teacherApplyLeavePage.rowTableLeave);
         //ArrayList<String> textList = new ArrayList<>();
         //for (WebElement element : arrayList) {
         //    textList.add(element.getText());
