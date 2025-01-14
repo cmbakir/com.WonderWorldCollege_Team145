@@ -5,6 +5,7 @@ import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import pages.ParentMyProfileAndProfilImagePage;
 import pages.ParentPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -18,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ParentProfileImageStepDefinitions {
 
-    ParentPage parentPage=new ParentPage();
+   ParentMyProfileAndProfilImagePage parentPage=new ParentMyProfileAndProfilImagePage();
 
     JavascriptExecutor jse= (JavascriptExecutor) Driver.getDriver();
 
