@@ -17,6 +17,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import pages.AdminPage;
+import pages.HomeNavBarPage;
 import pages.StudentLoginPage;
 import pages.TeacherApplyLeavePage;
 
@@ -212,34 +213,15 @@ public class ReusableMethods {
         TeacherApplyLeavePage teacherApplyLeavePage = new TeacherApplyLeavePage();
         Driver.getDriver().get(url);
 
-       // teacherApplyLeavePage.labelTeacherUsername.click();
+        // teacherApplyLeavePage.labelTeacherUsername.click();
         teacherApplyLeavePage.labelTeacherUsername.sendKeys(username);
         ReusableMethods.bekle(1);
-       // teacherApplyLeavePage.labelTeacherPassword.click();
+        // teacherApplyLeavePage.labelTeacherPassword.click();
         teacherApplyLeavePage.labelTeacherPassword.sendKeys(password);
         ReusableMethods.bekle(1);
         teacherApplyLeavePage.teacherSignInButton.click();
         bekle(2);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     private static int timeout = 5;
@@ -311,7 +293,6 @@ public class ReusableMethods {
     }
 
 
-
     public static void doubleClick(WebElement element) {
         new Actions(Driver.getDriver()).doubleClick(element).build().perform();
     }
@@ -346,11 +327,11 @@ public class ReusableMethods {
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public static List<String> getStringList(List<WebElement> kaynakList){
+    public static List<String> getStringList(List<WebElement> kaynakList) {
 
         List<String> stringList = new ArrayList<>();
 
-        for ( WebElement eachElement : kaynakList
+        for (WebElement eachElement : kaynakList
         ) {
 
             stringList.add(eachElement.getText());
@@ -374,15 +355,46 @@ public class ReusableMethods {
     }
 
 
+    public static String ilkSayfaWhdIleIkinciSayfaWhdBul(WebDriver driver, String ilkSayfaWhd) {
+
+        Set<String> tumWhdSeti = driver.getWindowHandles();
+
+        tumWhdSeti.remove(ilkSayfaWhd);
+
+        for (String each : tumWhdSeti
+        ) {
+            return each;
+        }
+
+        return null; // bu satirin hic calismayacagini biliyoruz
+        // sadece javanin endiselerini gidermek icin yazdik
+
+    }
 
 
+    public static void verifyUrlChangeAfterClick(WebElement elementToClick) {
+        Driver.getDriver().get(ConfigReader.getProperty("homePage"));
+        String beforeClickUrl = Driver.getDriver().getCurrentUrl();
+        elementToClick.click();
+        ReusableMethods.bekle(1);
+        String afterClickUrl = Driver.getDriver().getCurrentUrl();
+        Assertions.assertNotEquals(beforeClickUrl, afterClickUrl);
 
 
+    }
 
 
+    public static void verifyUrlChangeAfterClickDropdw(WebElement elementToClick) {
+        HomeNavBarPage homeNavBarPage = new HomeNavBarPage();
 
+        Driver.getDriver().get(ConfigReader.getProperty("homePage"));
+        homeNavBarPage.topbarAcadDropDw.click();
+        String beforeClickUrl = Driver.getDriver().getCurrentUrl();
+        elementToClick.click();
+        ReusableMethods.bekle(1);
+        String afterClickUrl = Driver.getDriver().getCurrentUrl();
+        Assertions.assertNotEquals(beforeClickUrl, afterClickUrl);
 
-
-
+    }
 
 }
