@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.java.bs.A;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -126,13 +127,22 @@ public class TeacherApplyLeaveStepDefinitions {
     @Then("It is verified that the status of the leave record is displayed under the Status heading in the Leaves List.")
         public void it_is_verified_that_the_status_of_the_leave_record_is_displayed_under_the_status_heading_in_the_leaves_list() {
 
+        System.out.println(teacherApplyLeavePage.row1stLeave.getText());
 
 
-        List<String> rowTableApplyLeaveList = ReusableMethods.getStringList(teacherApplyLeavePage.rowTableLeave);
-        int index = 7;
-        System.out.println(rowTableApplyLeaveList);
+        //ArrayList<WebElement> arrayList = new ArrayList<>(teacherApplyLeavePage.rowTableLeave);
+        //ArrayList<String> textList = new ArrayList<>();
+        //for (WebElement element : arrayList) {
+        //    textList.add(element.getText());
+       // }
+        //System.out.println(textList.get(4));
 
-        }
+        //List<String> rowTableApplyLeaveList = ReusableMethods.getStringList(teacherApplyLeavePage.rowTableLeave);
+        //Assertions.assertTrue(rowTableApplyLeaveList.contains("Pending"));
+        //int index = 4;
+       // System.out.println(rowTableApplyLeaveList.get(index).toString());
+
+    }
 
     @Then("Under the Action heading in the Leaves List, the delete icon is displayed for leave records with a status of pending.")
         public void under_the_action_heading_in_the_leaves_list_the_delete_icon_is_displayed_for_leave_records_with_a_status_of_pending() {
