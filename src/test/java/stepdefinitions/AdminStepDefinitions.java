@@ -174,6 +174,13 @@ public class AdminStepDefinitions {
 
     @When("the Save and Enroll button is clicked")
     public void the_save_and_enroll_button_is_clicked() {
+        adminPage.inputBoxAdmissionNo.click();
+        ReusableMethods.bekle(1);
+        adminPage.inputBoxAdmissionNo.clear();
+        ReusableMethods.bekle(2);;
+        String sendKey="1234";
+        adminPage.inputBoxAdmissionNo.sendKeys(sendKey);
+        ReusableMethods.bekle(2);;
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("arguments[0].scrollIntoView();",adminPage.saveAndEnrollButton);
         ReusableMethods.bekle(1);
