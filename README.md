@@ -68,7 +68,7 @@ Test Stratejisi
 
 Keşif Testleri, belirli bir yazılım uygulamasının sistematik bir şekilde incelenmeden, daha çok deneyim ve sezgilerin kullanılarak, potansiyel hataları, eksiklikleri veya beklenmeyen davranışları keşfedecektir.
 
-    UI Testleri: Panellerdeki tüm bileşenlerin görsel doğruluğu ve etkileşim işlevselliği test edilecektir.
+UI Testleri: Panellerdeki tüm bileşenlerin görsel doğruluğu ve etkileşim işlevselliği test edilecektir.
 
 Fonksiyonel Testler: Tüm kullanıcı hikayelerine uygun olarak her özelliğin doğru çalıştığı kontrol edilecektir.
 
