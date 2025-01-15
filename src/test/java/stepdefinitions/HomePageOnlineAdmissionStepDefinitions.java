@@ -2,8 +2,8 @@ package stepdefinitions;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
-import io.cucumber.java.eo.Se;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.By;
 import pages.HomePageOnlineAdmissionPage;
@@ -15,6 +15,7 @@ public class HomePageOnlineAdmissionStepDefinitions {
 
     HomePageOnlineAdmissionPage homePageOnlineAdmissionPage = new HomePageOnlineAdmissionPage();
     Faker faker = new Faker();
+    Actions actions = new Actions(Driver.getDriver());
 
 
     @Given("user goes to the {string}")
@@ -58,15 +59,11 @@ public class HomePageOnlineAdmissionStepDefinitions {
     @Then("verifies that And Class, First Name, Gender, Date Of Birth TextBoxes are required fields to enter data")
     public void verifies_that_and_class_first_name_gender_date_of_birth_text_boxes_are_required_fields_to_enter_data() {
 
-        homePageOnlineAdmissionPage.submitButton.click();
-
-        ReusableMethods.bekle(2);
-
-        Assertions.assertTrue(homePageOnlineAdmissionPage.labelClassRequired.isDisplayed());
-        Assertions.assertTrue(homePageOnlineAdmissionPage.labelFirstNameRequired.isDisplayed());
-        Assertions.assertTrue(homePageOnlineAdmissionPage.labelGenderRequired.isDisplayed());
-        Assertions.assertTrue(homePageOnlineAdmissionPage.labelDateOfBirthRequired.isDisplayed());
-        Assertions.assertTrue(homePageOnlineAdmissionPage.labelEmailRequired.isDisplayed());
+        Assertions.assertTrue(homePageOnlineAdmissionPage.iconClassRequired.isDisplayed());
+        Assertions.assertTrue(homePageOnlineAdmissionPage.iconDateOfBirthRequired.isDisplayed());
+        Assertions.assertTrue(homePageOnlineAdmissionPage.iconGenderRequired.isDisplayed());
+        Assertions.assertTrue(homePageOnlineAdmissionPage.iconFirstNameRequired.isDisplayed());
+        Assertions.assertTrue(homePageOnlineAdmissionPage.iconEmailRequired.isDisplayed());
     }
 
     @Then("enters random data into Class, First Name, Last Name, Gender, Date Of Birth, Mobile Number, Email textBoxes")
@@ -75,7 +72,7 @@ public class HomePageOnlineAdmissionStepDefinitions {
         Select selectClass = new Select(homePageOnlineAdmissionPage.dropDownClass);
         Select selectGender = new Select(homePageOnlineAdmissionPage.dropDownGender);
 
-        selectClass.selectByIndex(0);
+        selectClass.selectByIndex(1);
 
         homePageOnlineAdmissionPage.inputBoxFirstName.sendKeys(faker.name().firstName());
         homePageOnlineAdmissionPage.inputBoxLastName.sendKeys(faker.name().lastName());
@@ -109,9 +106,90 @@ public class HomePageOnlineAdmissionStepDefinitions {
     @Then("uploads a photo to the Student Photo section in Basic Details")
     public void uploads_a_photo_to_the_student_photo_section_in_basic_details() {
 
+        homePageOnlineAdmissionPage.studentPhotoButton
+                .sendKeys("C:\\Users\\legen\\OneDrive\\Masaüstü\\Her Şey\\Resimler\\named.jpg");
 
+        ReusableMethods.bekle(1);
+
+        actions.moveToElement(homePageOnlineAdmissionPage.studentPhotoButton).perform();
+
+        ReusableMethods.bekle(2);
+
+        Assertions.assertTrue(homePageOnlineAdmissionPage.studentPhotoRemoveButton.isDisplayed());
     }
 
+    @And("verifies that the Father Name, Mother Name TextBoxes are visible in the Parent Detail field on the sheet")
+    public void verifiesThatTheFatherNameMotherNameTextBoxesAreVisibleInTheParentDetailFieldOnTheSheet() {
 
+        Assertions.assertTrue(homePageOnlineAdmissionPage.inputFatherName.isDisplayed());
+        Assertions.assertTrue(homePageOnlineAdmissionPage.inputMotherName.isDisplayed());
+    }
 
+    @Then("enters random data in the Father Name, Mother Name TextBoxes in the Parent Detail field")
+    public void entersRandomDataInTheFatherNameMotherNameTextBoxesInTheParentDetailField() {
+
+        homePageOnlineAdmissionPage.inputFatherName.sendKeys(faker.name().firstName());
+        homePageOnlineAdmissionPage.inputMotherName.sendKeys(faker.name().firstName());
+
+        ReusableMethods.bekle(1);
+    }
+
+    @Then("that the Guardian Name, Guardian Relation, Guardian Email, Guardian Phone, Guardian Occupation, Guardian Address TextBoxes are visible in the Guardian Details field on the And page")
+    public void that_the_guardian_name_guardian_relation_guardian_email_guardian_phone_guardian_occupation_guardian_address_text_boxes_are_visible_in_the_guardian_details_field_on_the_and_page() {
+
+        Assertions.assertTrue(homePageOnlineAdmissionPage.inputGuardianName.isDisplayed());
+        Assertions.assertTrue(homePageOnlineAdmissionPage.inputGuardianRelation.isDisplayed());
+        Assertions.assertTrue(homePageOnlineAdmissionPage.inputGuardianEmail.isDisplayed());
+        Assertions.assertTrue(homePageOnlineAdmissionPage.inputGuardianPhone.isDisplayed());
+        Assertions.assertTrue(homePageOnlineAdmissionPage.inputGuardianOccupation.isDisplayed());
+        Assertions.assertTrue(homePageOnlineAdmissionPage.inputGuardianAddress.isDisplayed());
+    }
+    @Then("verifies that If Guardian Is, Guardian Name, Guardian Relation TextBoxes in the Guardian Details field are required fields to enter data")
+    public void verifies_that_if_guardian_is_guardian_name_guardian_relation_text_boxes_in_the_guardian_details_field_are_required_fields_to_enter_data() {
+
+        Assertions.assertTrue(homePageOnlineAdmissionPage.iconIfGuardianIsRequired.isDisplayed());
+        Assertions.assertTrue(homePageOnlineAdmissionPage.iconGuardianNameRequired.isDisplayed());
+        Assertions.assertTrue(homePageOnlineAdmissionPage.iconGuardianRelationRequired.isDisplayed());
+    }
+    @Then("enters random values in the Guardian Name, Guardian Relation, Guardian Email, Guardian Phone, Guardian Occupation, Guardian Address TextBoxes in the Guardian Details field")
+    public void enters_random_values_in_the_guardian_name_guardian_relation_guardian_email_guardian_phone_guardian_occupation_guardian_address_text_boxes_in_the_guardian_details_field() {
+
+        homePageOnlineAdmissionPage.inputGuardianName.sendKeys(faker.name().firstName());
+        homePageOnlineAdmissionPage.inputGuardianRelation.sendKeys("Father");
+        homePageOnlineAdmissionPage.inputGuardianEmail.sendKeys(faker.internet().emailAddress());
+        homePageOnlineAdmissionPage.inputGuardianPhone.sendKeys(faker.phoneNumber().phoneNumber());
+        homePageOnlineAdmissionPage.inputGuardianOccupation.sendKeys(faker.job().field());
+        homePageOnlineAdmissionPage.inputGuardianAddress.sendKeys(faker.address().fullAddress());
+    }
+    @Then("Guardian uploads photos for Parent in the Details field")
+    public void guardian_uploads_photos_for_parent_in_the_details_field() {
+
+        homePageOnlineAdmissionPage.guardianPhotoButton
+                .sendKeys("C:\\Users\\legen\\OneDrive\\Masaüstü\\Her Şey\\Resimler\\named.jpg");
+
+        ReusableMethods.bekle(1);
+
+        actions.moveToElement(homePageOnlineAdmissionPage.guardianPhotoButton).perform();
+
+        ReusableMethods.bekle(2);
+
+        Assertions.assertTrue(homePageOnlineAdmissionPage.guardianPhotoRemoveButton.isDisplayed());
+    }
+
+    @And("Verifies that the radio buttons in the If Guardian Is question in the And Guardian Details field are visible and clickable")
+    public void verifiesThatTheRadioButtonsInTheIfGuardianIsQuestionInTheAndGuardianDetailsFieldAreVisibleAndClickable() {
+
+        Assertions.assertTrue(homePageOnlineAdmissionPage.radioButtonFather.isDisplayed());
+        Assertions.assertTrue(homePageOnlineAdmissionPage.radioButtonMother.isDisplayed());
+        Assertions.assertTrue(homePageOnlineAdmissionPage.radioButtonOther.isDisplayed());
+
+        homePageOnlineAdmissionPage.radioButtonFather.click();
+        ReusableMethods.bekle(1);
+
+        homePageOnlineAdmissionPage.radioButtonMother.click();
+        ReusableMethods.bekle(1);
+
+        homePageOnlineAdmissionPage.radioButtonOther.click();
+        ReusableMethods.bekle(1);
+    }
 }
