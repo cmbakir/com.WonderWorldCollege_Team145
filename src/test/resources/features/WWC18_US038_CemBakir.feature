@@ -2,8 +2,8 @@ Feature: WWC18 US038 As an administrator (teacher) I would like to have a page w
          view all my permissions in order to create an online permission record and check
          the permissions I have used
 
-  @cem17
-  Scenario:WWC18 TC_01 -> Testing the Ability to Create an Online Leave Record as a Teacher User
+  @@paralel2
+  Scenario:WWC65 TC_01 -> Testing the Ability to Create an Online Leave Record as a Teacher User
 
     Given The user logs in as a teacher on the relevant Admin login screen using their username and password.
      Then The teacher user clicks on the Human Resource dropdown menu in the sidebar of the panel.
@@ -13,7 +13,7 @@ Feature: WWC18 US038 As an administrator (teacher) I would like to have a page w
      Then In the opened Add Details window, the fields Apply Date, Available Leave, Leave From Date, Leave To Date, Reason box, and the Save button should be visible and active.
       And In the Add Details window, the user fills in the required fields, clicks the Save button, and creates a new leave record.
 
-    @t1
+
   Scenario:WWC140 TC_02 -> Testing the Ability to Check Leaves as a Teacher User
 
     Given The user logs in as a teacher on the relevant Admin login screen using their username and password.

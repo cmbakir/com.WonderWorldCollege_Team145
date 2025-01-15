@@ -124,10 +124,17 @@ public class TeacherApplyLeavePage {
     public WebElement tableViewAtLeaves;
     // TeacherApplyLeavePage >> Apply Leave
 
-    @FindBy (xpath = "//*[@class='odd']")
+    @FindBy (xpath = "(//*[@class='odd'])[1]")
     public List<WebElement> rowTableLeave;
+    // TeacherApplyLeavePage >> Apply Leave
 
+    @FindBy (xpath = "//*[@aria-label='Status: activate to sort column ascending']")
+    public WebElement labelStatus;
+    // TeacherApplyLeavePage >> Apply Leave
 
+    @FindBy (xpath = "(//*[@class='label label-warning'])[1]")
+    public WebElement labelPending;
+    // TeacherApplyLeavePage >> Apply Leave
 
 
 
