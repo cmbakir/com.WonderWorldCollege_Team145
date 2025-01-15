@@ -176,7 +176,7 @@ public class AdminStepDefinitions {
     public void the_save_and_enroll_button_is_clicked() {
         adminPage.inputBoxAdmissionNo.click();
         ReusableMethods.bekle(2);;
-        String sendKey="11";
+        String sendKey="1111";
         adminPage.inputBoxAdmissionNo.sendKeys(sendKey);
         ReusableMethods.bekle(2);;
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
