@@ -67,22 +67,74 @@ public class HomePageOnlineAdmissionPage {
     @FindBy(xpath = "(//*[@class='filestyle form-control'])[1]")
     public WebElement studentPhotoButton;
 
-    @FindBy(xpath = "(//*[@class='text-danger'])[8]")
-    public WebElement labelClassRequired;
+    @FindBy(xpath = "(//*[@class='req'])[8]")
+    public WebElement iconClassRequired;
 
-    @FindBy(xpath = "(//*[@class='text-danger'])[10]")
-    public WebElement labelFirstNameRequired;
+    @FindBy(xpath = "(//*[@class='req'])[10]")
+    public WebElement iconFirstNameRequired;
 
-    @FindBy(xpath = "(//*[@class='text-danger'])[12]")
-    public WebElement labelGenderRequired;
+    @FindBy(xpath = "(//*[@class='req'])[11]")
+    public WebElement iconGenderRequired;
 
-    @FindBy(xpath = "(//*[@class='text-danger'])[13]")
-    public WebElement labelDateOfBirthRequired;
+    @FindBy(xpath = "(//*[@class='req'])[12]")
+    public WebElement iconDateOfBirthRequired;
 
-    @FindBy(xpath = "(//*[@class='text-danger'])[15]")
-    public WebElement labelEmailRequired;
+    @FindBy(xpath = "(//*[@class='req'])[13]")
+    public WebElement iconEmailRequired;
+
+    @FindBy(xpath = "(//*[@class='dropify-clear'])[1]")
+    public WebElement studentPhotoRemoveButton;
 
     // Parent Detail
 
+    @FindBy(xpath = "//*[@id='father_name']")
+    public WebElement inputFatherName;
+
+    @FindBy(xpath = "//*[@id='mother_name']")
+    public WebElement inputMotherName;
+
+    // Guardian Details
+
+    @FindBy(xpath = "(//*[@class='radio-inline'])[1]")
+    public WebElement radioButtonFather;
+
+    @FindBy(xpath = "(//*[@class='radio-inline'])[2]")
+    public WebElement radioButtonMother;
+
+    @FindBy(xpath = "(//*[@class='radio-inline'])[3]")
+    public WebElement radioButtonOther;
+
+    @FindBy(xpath = "//*[@id='guardian_name']")
+    public WebElement inputGuardianName;
+
+    @FindBy(xpath = "//*[@id='guardian_relation']")
+    public WebElement inputGuardianRelation;
+
+    @FindBy(xpath = "//*[@id='guardian_email']")
+    public WebElement inputGuardianEmail;
+
+    @FindBy(xpath = "//*[@id='guardian_phone']")
+    public WebElement inputGuardianPhone;
+
+    @FindBy(xpath = "//*[@id='guardian_occupation']")
+    public WebElement inputGuardianOccupation;
+
+    @FindBy(xpath = "//*[@id='guardian_address']")
+    public WebElement inputGuardianAddress;
+
+    @FindBy(xpath = "(//*[@class='filestyle form-control'])[2]")
+    public WebElement guardianPhotoButton;
+
+    @FindBy(xpath = "(//*[@class='req'])[14]")
+    public WebElement iconIfGuardianIsRequired;
+
+    @FindBy(xpath = "(//*[@class='req'])[15]")
+    public WebElement iconGuardianNameRequired;
+
+    @FindBy(xpath = "(//*[@class='req'])[16]")
+    public WebElement iconGuardianRelationRequired;
+
+    @FindBy(xpath = "(//*[@class='dropify-clear'])[2]")
+    public WebElement guardianPhotoRemoveButton;
 
 }
