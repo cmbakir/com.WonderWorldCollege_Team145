@@ -55,14 +55,14 @@ public class AdminStepDefinitions {
 
     @When("enter a student name in the search box")
     public void enter_a_student_name_in_the_search_box() {
-        adminPage.labelSearch.sendKeys("ozlem");
+        adminPage.labelSearch.sendKeys("deneme");
         ReusableMethods.bekle(2);
 
     }
     @Then("see only the details of the relevant student in the search results")
     public void see_only_the_details_of_the_relevant_student_in_the_search_results() {
         List<String> actualsearch = ReusableMethods.stringListeyeCevir(adminPage.columnfirst);
-        assertTrue(actualsearch.toString().contains("ozlem"));
+        assertTrue(actualsearch.toString().contains("deneme"));
 
     }
 
@@ -131,7 +131,7 @@ public class AdminStepDefinitions {
         ReusableMethods.bekle(1);
         adminPage.inputBoxAdmissionNo.clear();
         ReusableMethods.bekle(1);
-        String sendKey="12345";
+        String sendKey="1997";
         adminPage.inputBoxAdmissionNo.sendKeys(sendKey);
         ReusableMethods.bekle(2);
     }
@@ -175,10 +175,8 @@ public class AdminStepDefinitions {
     @When("the Save and Enroll button is clicked")
     public void the_save_and_enroll_button_is_clicked() {
         adminPage.inputBoxAdmissionNo.click();
-        ReusableMethods.bekle(1);
-        adminPage.inputBoxAdmissionNo.clear();
         ReusableMethods.bekle(2);;
-        String sendKey="1234";
+        String sendKey="11";
         adminPage.inputBoxAdmissionNo.sendKeys(sendKey);
         ReusableMethods.bekle(2);;
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
