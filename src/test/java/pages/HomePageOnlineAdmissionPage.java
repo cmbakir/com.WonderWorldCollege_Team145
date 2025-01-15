@@ -16,7 +16,7 @@ public class HomePageOnlineAdmissionPage {
     @FindBy(xpath = "(//*[@class='col-md-12'])[1]")
     public WebElement labelInstructions;
 
-    @FindBy(xpath = "//*[@class='col-lg-2 col-md-2 col-sm-5']")
+    @FindBy(xpath = "//*[@class='onlineformbtn mt10']")
     public WebElement submitButton;
 
 
@@ -136,5 +136,41 @@ public class HomePageOnlineAdmissionPage {
 
     @FindBy(xpath = "(//*[@class='dropify-clear'])[2]")
     public WebElement guardianPhotoRemoveButton;
+
+    // Miscellaneous Details
+
+    @FindBy(xpath = "//*[@id='adhar_no']")
+    public WebElement inputNationalID;
+
+    @FindBy(xpath = "//*[@name='previous_school']")
+    public WebElement inputPreviousSchool;
+
+    // Upload Documents
+
+    @FindBy(xpath = "//*[@id='document']")
+    public WebElement uploadDocumentButton;
+
+    @FindBy(xpath = "(//*[@class='dropify-clear'])[3]")
+    public WebElement uploadDocumentRemoveButton;
+
+    // Review Entered Details and Status
+
+    @FindBy(xpath = "(//li)[34]//span")
+    public WebElement rowReferenceNo;
+
+    @FindBy(xpath = "(//li)[35]//span")
+    public WebElement rowFormStatus;
+
+    @FindBy(xpath = "(//li)[36]//span")
+    public WebElement rowApplicationDate;
+
+    @FindBy(xpath = "//*[@type='checkbox']")
+    public WebElement termsAndConditionsCheckBox;
+
+    @FindBy(xpath = "//*[@id='submitbtn']")
+    public WebElement reviewSubmitButton;
+
+    @FindBy(xpath = "//*[@class='alert alert-success']")
+    public WebElement alertSuccess;
 
 }

@@ -3,6 +3,7 @@ package stepdefinitions;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.By;
@@ -10,6 +11,9 @@ import pages.HomePageOnlineAdmissionPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class HomePageOnlineAdmissionStepDefinitions {
 
@@ -192,4 +196,144 @@ public class HomePageOnlineAdmissionStepDefinitions {
         homePageOnlineAdmissionPage.radioButtonOther.click();
         ReusableMethods.bekle(1);
     }
+
+    @And("verifies that the National Identification Number, Previous School Details TextBoxes are visible in the Miscellaneous Details field on the page")
+    public void verifiesThatTheNationalIdentificationNumberPreviousSchoolDetailsTextBoxesAreVisibleInTheMiscellaneousDetailsFieldOnThePage() {
+
+        actions.moveToElement(homePageOnlineAdmissionPage.inputNationalID).perform();
+
+        ReusableMethods.bekle(1);
+
+        Assertions.assertTrue(homePageOnlineAdmissionPage.inputNationalID.isDisplayed());
+        Assertions.assertTrue(homePageOnlineAdmissionPage.inputPreviousSchool.isDisplayed());
+    }
+
+    @Then("enters random values in the National Identification Number, Previous School Details TextBoxes in the Miscellaneous Details field")
+    public void entersRandomValuesInTheNationalIdentificationNumberPreviousSchoolDetailsTextBoxesInTheMiscellaneousDetailsField() {
+
+        homePageOnlineAdmissionPage.inputNationalID.sendKeys(faker.idNumber().valid());
+        homePageOnlineAdmissionPage.inputPreviousSchool.sendKeys(faker.programmingLanguage().name());
+    }
+
+    @And("uploads a document to the Upload Documents field")
+    public void uploadsADocumentToTheUploadDocumentsField() {
+
+        actions.moveToElement(homePageOnlineAdmissionPage.uploadDocumentButton).perform();
+
+        ReusableMethods.bekle(1);
+
+        homePageOnlineAdmissionPage.uploadDocumentButton
+                .sendKeys("C:\\Users\\legen\\OneDrive\\Masaüstü\\Programming\\pdf\\the-pragmatic-programmer.pdf");
+
+        ReusableMethods.bekle(1);
+
+        actions.moveToElement(homePageOnlineAdmissionPage.uploadDocumentButton).perform();
+
+        ReusableMethods.bekle(1);
+
+        Assertions.assertTrue(homePageOnlineAdmissionPage.uploadDocumentRemoveButton.isDisplayed());
+    }
+
+    @Then("fills out the form on the page and clicks Submit")
+    public void fills_out_the_form_on_the_page_and_clicks_submit() {
+
+        Select selectClass = new Select(homePageOnlineAdmissionPage.dropDownClass);
+        Select selectGender = new Select(homePageOnlineAdmissionPage.dropDownGender);
+
+        selectClass.selectByIndex(1);
+
+        homePageOnlineAdmissionPage.inputBoxFirstName.sendKeys(faker.name().firstName());
+        homePageOnlineAdmissionPage.inputBoxLastName.sendKeys(faker.name().lastName());
+        selectGender.selectByVisibleText("Male");
+
+        homePageOnlineAdmissionPage.dropDownDateOfBirth.click();
+
+        homePageOnlineAdmissionPage.dateOfBirthDatePickerMonthButton.click();
+
+        homePageOnlineAdmissionPage.dateOfBirthDatePickerYearButton.click();
+
+        homePageOnlineAdmissionPage.dateOfBirthPrevYearButton.click();
+
+        homePageOnlineAdmissionPage.dateOfBirthYear.click();
+
+        homePageOnlineAdmissionPage.dateOfBirthMonth.click();
+
+        homePageOnlineAdmissionPage.dateOfBirthDay.click();
+        ReusableMethods.bekle(1);
+
+        homePageOnlineAdmissionPage.inputBoxMobilePhone.sendKeys(faker.phoneNumber().cellPhone());
+        homePageOnlineAdmissionPage.inputBoxEmail.sendKeys(faker.internet().emailAddress());
+
+        actions.moveToElement(homePageOnlineAdmissionPage.inputGuardianName).perform();
+
+        ReusableMethods.bekle(1);
+
+        homePageOnlineAdmissionPage.radioButtonFather.click();
+
+        homePageOnlineAdmissionPage.inputGuardianName.sendKeys(faker.name().firstName());
+
+        homePageOnlineAdmissionPage.submitButton.click();
+
+        ReusableMethods.bekle(1);
+    }
+
+    @Then("verifies that the student is redirected to the Review Entered Details and Status page and that a Reference Number has been created on behalf of the student")
+    public void verifies_that_the_student_is_redirected_to_the_review_entered_details_and_status_page_and_that_a_reference_number_has_been_created_on_behalf_of_the_student() {
+
+        String expectedUrlIcerik = "online_admission_review";
+        String actualUrl = Driver.getDriver().getCurrentUrl();
+
+        Assertions.assertTrue(actualUrl.contains(expectedUrlIcerik));
+
+        Assertions.assertTrue(homePageOnlineAdmissionPage.rowReferenceNo.isDisplayed());
+    }
+
+    @Then("verifies that the Form Status on the page is Not Submitted and the Application Date is the date the record was created on the Online Admission page")
+    public void verifies_that_the_form_status_on_the_page_is_not_submitted_and_the_application_date_is_the_date_the_record_was_created_on_the_online_admission_page() {
+
+        String expectedFormStatus = "Not Submitted";
+        String actualFormStatus = homePageOnlineAdmissionPage.rowFormStatus.getText();
+
+        Assertions.assertEquals(expectedFormStatus, actualFormStatus);
+
+
+        LocalDate today = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String formattedDate = today.format(formatter);
+
+        String expectedDate = formattedDate;
+        String actualDate = homePageOnlineAdmissionPage.rowApplicationDate.getText();
+
+        Assertions.assertEquals(expectedDate, actualDate);
+    }
+
+    @Then("verifies that the I Agree To The Terms And Conditions checkBox on the page is visible and clicks")
+    public void verifies_that_the_i_agree_to_the_terms_and_conditions_check_box_on_the_page_is_visible_and_clicks() {
+
+        actions.moveToElement(homePageOnlineAdmissionPage.termsAndConditionsCheckBox).perform();
+
+        ReusableMethods.bekle(1);
+
+        Assertions.assertTrue(homePageOnlineAdmissionPage.termsAndConditionsCheckBox.isDisplayed());
+
+        homePageOnlineAdmissionPage.termsAndConditionsCheckBox.click();
+    }
+
+    @Then("clicks the Submit button on the page and verifies that the message Form Has Been Submitted Successfully...!! appears and the Form Status is Submitted")
+    public void clicks_the_submit_button_on_the_page_and_verifies_that_the_message_form_has_been_submitted_successfully_appears_and_the_form_status_is_submitted() {
+
+        homePageOnlineAdmissionPage.reviewSubmitButton.click();
+
+        ReusableMethods.bekle(1);
+
+        Assertions.assertTrue(homePageOnlineAdmissionPage.alertSuccess.isDisplayed());
+
+        String expectedFormStatus = "Submitted";
+        String actualFormStatus = homePageOnlineAdmissionPage.rowFormStatus.getText();
+
+        Assertions.assertEquals(expectedFormStatus, actualFormStatus);
+
+        ReusableMethods.bekle(2);
+    }
+
 }
