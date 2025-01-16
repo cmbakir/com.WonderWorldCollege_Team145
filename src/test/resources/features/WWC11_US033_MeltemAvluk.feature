@@ -1,8 +1,8 @@
 
-Feature: WWC Sinav Group Olusturma Testi
+Feature: WWC11 Examination Group Creating Test
   @test
-  Scenario: [TC01]->US_033] Test to verify Examination Test Bar,Page For Students
-   # TC01
+  Scenario: WWC43 TC01->US_033 Test to verify Examination Test Bar,Page For Students
+
     Given  user clicks "adminAndTeacherLogin"
     Then   enters user name
     And    enters password
@@ -11,16 +11,16 @@ Feature: WWC Sinav Group Olusturma Testi
 
 
   @test
-  Scenario: [TC02]->US_033] Verifying Name,Save button, Description textBoxes and Exam Type dropdown menu is visible
+  Scenario: WWC79 TC02->US_033 Verifying Name,Save button, Description textBoxes and Exam Type dropdown menu is visible
 
-    # 1
+
     Given  user clicks "adminAndTeacherLogin"
     Then   enters user name
     And    enters password
     Then   click signIn button
     Then   verifies examinations  test bar is visible
 
-     # 2
+
     And user clicks Examinations bar
     And  user clicks examGroup bar
     And    verifies redirecting examGroupPage
@@ -30,14 +30,14 @@ Feature: WWC Sinav Group Olusturma Testi
     And    verifies save button
 
   @test
-  Scenario:[TC03]->US_033] Test to verify New Exam Group
-    # TC01
+  Scenario: WWC80 TC03->US_033 Test to verify New Exam Group
+
     Given  user clicks "adminAndTeacherLogin"
     Then   enters user name
     And    enters password
     Then   click signIn button
     Then   verifies examinations  test bar is visible
-    # TC02
+
     And user clicks Examinations bar
     And  user clicks examGroup bar
     And    verifies redirecting examGroupPage
@@ -49,8 +49,8 @@ Feature: WWC Sinav Group Olusturma Testi
 
 
   @test
-  Scenario:[TC04]->US_033] Test to verify Created New and all Exam Group are visible on the list
-    # TC01
+  Scenario: WWC81 TC04->US_033 Test to verify Created New and all Exam Group are visible on the list
+
     Given  user clicks "adminAndTeacherLogin"
     Then   enters user name
     And    enters password
@@ -58,7 +58,7 @@ Feature: WWC Sinav Group Olusturma Testi
     Then   verifies examinations  test bar is visible
 
 
-     # TC02
+
     And user clicks Examinations bar
     And  user clicks examGroup bar
     And    verifies redirecting examGroupPage
@@ -67,7 +67,7 @@ Feature: WWC Sinav Group Olusturma Testi
     Then   verifies description area
     And    verifies save button
 
-    # TC03 ve TC04
+
     Given user enters new name
     And  selects exam type from dropdown menu
     Then types any description to box
@@ -77,8 +77,8 @@ Feature: WWC Sinav Group Olusturma Testi
 
   @test
 
-# TC01
-  Scenario: [TC05]->US_033] Test to verify if add exam(+) button works
+
+  Scenario: WWC82 TC05->US_033 Test to verify if add exam(+) button works
 
     Given  user clicks "adminAndTeacherLogin"
     Then   enters user name
@@ -86,7 +86,7 @@ Feature: WWC Sinav Group Olusturma Testi
     Then   click signIn button
     Then   verifies examinations  test bar is visible
 
- # TC02
+
     And user clicks Examinations bar
     And  user clicks examGroup bar
     And    verifies redirecting examGroupPage
@@ -95,7 +95,7 @@ Feature: WWC Sinav Group Olusturma Testi
     Then   verifies description area
     And    verifies save button
 
-   # TC03 ve TC04
+
     Given user enters new name
     And  selects exam type from dropdown menu
     Then types any description to box
@@ -108,11 +108,11 @@ Feature: WWC Sinav Group Olusturma Testi
 
 
   @test
-  Scenario: [TC06]->US_033] Test to Edit exam group list is edited after entered new updates
+  Scenario: WWC83 TC06->US_033 Test to Edit exam group list is edited after entered new updates
 
 
 
-  Scenario: [TC05]->US_033] Test to verify if add exam(+) button works
+  Scenario: WWC82 TC05->US_033 Test to verify if add exam(+) button works
    # TC01
     Given  user clicks "adminAndTeacherLogin"
     Then   enters user name
@@ -151,7 +151,7 @@ Feature: WWC Sinav Group Olusturma Testi
 
     @test
 
-    Scenario: [TC07]->US_033] Testing if The relevant exam group is deleted
+    Scenario: WWC84 TC07->US_033 Testing if The relevant exam group is deleted
 
        # TC01
       Given  user clicks "adminAndTeacherLogin"
