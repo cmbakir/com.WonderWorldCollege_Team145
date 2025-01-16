@@ -123,7 +123,7 @@ public class AdminPage {
     public WebElement iconNotSubmitted;
     // Student List >> Form Status >> Not Submitted Icon
 
-    @FindBy (xpath = "(//*[@class='fa fa-check'])[1]")
+    @FindBy (xpath = "//*[@class='fa fa-check']")
     public WebElement iconEnrolled;
     // Student List >> Enrolled >> Tik Icon
 
