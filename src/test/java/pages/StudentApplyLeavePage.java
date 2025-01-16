@@ -26,7 +26,7 @@ public class StudentApplyLeavePage {
     @FindBy(xpath = "//h3[@class='box-title']")
     public WebElement leaveListPage; // access to leave list page
 
-    @FindBy (xpath = "//th")
+    @FindBy (xpath = "////tr")
     public WebElement columnFields; // column fields on the leave list page
 
     @FindBy(xpath = "//i[@class='fa fa-pencil']")
