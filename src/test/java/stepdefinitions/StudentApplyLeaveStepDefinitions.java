@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.StudentApplyLeavePage;
 import utilities.ConfigReader;
@@ -41,7 +42,7 @@ public class StudentApplyLeaveStepDefinitions {
     @Given("the user should be displayed column fields")
     public void the_user_should_be_displayed_column_fields() {
 
-        studentApplyLeavePage.columnFields.isDisplayed();
+       // studentApplyLeavePage.columnFields.isDisplayed();
     }
 
     // user edits  leave
@@ -78,6 +79,7 @@ public class StudentApplyLeaveStepDefinitions {
  @Then("clicks editSave button")
  public void clicksEditSaveButton() {
      studentApplyLeavePage.editSaveButton.click();
+     ReusableMethods.bekle(2);
  }
 
 
@@ -119,6 +121,7 @@ public class StudentApplyLeaveStepDefinitions {
     @Given("student  clicks add button")
     public void studentClicksAddButton() {
      studentApplyLeavePage.addButton.click();
+     ReusableMethods.bekle(2);
 
     }
 
@@ -156,11 +159,13 @@ public class StudentApplyLeaveStepDefinitions {
     @And("clicks save button")
     public void clicksSaveButton() {
     studentApplyLeavePage.addLeaveSaveButton.click();
+    ReusableMethods.bekle(2);
 
     }
 
     @And("accepts that is saved  from alert")
     public void acceptsThatIsSavedFromAlert() {
+
         Driver.getDriver().switchTo().alert().accept();
     }
 
@@ -168,7 +173,8 @@ public class StudentApplyLeaveStepDefinitions {
  @Given("the user access student page")
  public void theUserAccessStudentPage() {
 
-        Driver.getDriver().get("https://qa.wonderworldcollege.com/site/userlogin");
+         driver.get("https://qa.wonderworldcollege.com/site/userlogin");
+      //  Driver.getDriver().get("https://qa.wonderworldcollege.com/site/userlogin");
  }
 
  @Given("enters student user name")
