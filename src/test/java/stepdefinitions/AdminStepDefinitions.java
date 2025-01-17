@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +18,7 @@ public class AdminStepDefinitions {
 
     AdminPage adminPage=new AdminPage();
     WebDriver driver;
-
+    Faker faker=new Faker();
 
     @Given("logged in as an admin")
     public void logged_in_as_an_admin() {
@@ -131,8 +132,7 @@ public class AdminStepDefinitions {
         ReusableMethods.bekle(1);
         adminPage.inputBoxAdmissionNo.clear();
         ReusableMethods.bekle(1);
-        String sendKey="1997";
-        adminPage.inputBoxAdmissionNo.sendKeys(sendKey);
+        adminPage.inputBoxAdmissionNo.sendKeys(faker.number().digits(4));
         ReusableMethods.bekle(2);
     }
 
@@ -175,10 +175,8 @@ public class AdminStepDefinitions {
     @When("the Save and Enroll button is clicked")
     public void the_save_and_enroll_button_is_clicked() {
         adminPage.inputBoxAdmissionNo.click();
-        ReusableMethods.bekle(2);;
-        String sendKey="1111";
-        adminPage.inputBoxAdmissionNo.sendKeys(sendKey);
-        ReusableMethods.bekle(2);;
+        ReusableMethods.bekle(2);
+
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("arguments[0].scrollIntoView();",adminPage.saveAndEnrollButton);
         ReusableMethods.bekle(1);
@@ -202,4 +200,5 @@ public class AdminStepDefinitions {
     public void it_is_verified_that_the_student_s_enrollment_status_is_updated_to(String string) {
         assertTrue(adminPage.iconEnrolled.isDisplayed());
     }
+
 }
