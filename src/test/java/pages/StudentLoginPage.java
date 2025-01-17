@@ -23,4 +23,25 @@ public class StudentLoginPage {
 
 
 
+
+
+   @FindBy (xpath = "//*[@class='topuser-image']")
+    public WebElement iconStudentUserImage;
+    // Student Dasboard >> User Image
+
+    @FindBy (xpath = "//*[@href='https://qa.wonderworldcollege.com/site/logout']")
+    public WebElement linkLogoutStudent;
+    // Student Dasboard >> Logut Link
+
+    @FindBy (xpath = "//*[@class='alert alert-danger']")
+    public WebElement labelInvalidAlert;
+    // Student Login>> Invalid Username and Password
+
+
+
+
+
+
+
+
 }
