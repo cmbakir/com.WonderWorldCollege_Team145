@@ -200,4 +200,5 @@ public class AdminStepDefinitions {
     public void it_is_verified_that_the_student_s_enrollment_status_is_updated_to(String string) {
         assertTrue(adminPage.iconEnrolled.isDisplayed());
     }
+
 }
