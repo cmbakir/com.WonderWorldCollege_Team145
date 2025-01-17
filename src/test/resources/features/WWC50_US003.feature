@@ -1,7 +1,7 @@
 Feature: WWC-50 User Online Admission Test
 
   @online
-  Scenario: WWC-105 US003 As a user, viewing the Online Admission page and Basic Details and data entry test
+  Scenario: WWC-105 TC_01 -> US_003 As a user, viewing the Online Admission page and Basic Details and data entry test
     Given user goes to the 'homePage'
     Then click on the Online Admission menu heading in the top bar
     And confirms that it redirects to the Online Admission page
@@ -12,14 +12,14 @@ Feature: WWC-50 User Online Admission Test
     Then uploads a photo to the Student Photo section in Basic Details
 
   @online
-  Scenario: WWC-107 US003 Test to display the Parent Detail window and enter data as a user
+  Scenario: WWC-107 TC_02 -> US_003 Test to display the Parent Detail window and enter data as a user
     Given user goes to the 'homePage'
     Then click on the Online Admission menu heading in the top bar
     And verifies that the Father Name, Mother Name TextBoxes are visible in the Parent Detail field on the sheet
     Then enters random data in the Father Name, Mother Name TextBoxes in the Parent Detail field
 
   @online
-  Scenario: WWC-108 US003 Test to display the Guardians Details elements and enter data as a user
+  Scenario: WWC-108 TC_03 -> US_003 Test to display the Guardians Details elements and enter data as a user
     Given user goes to the 'homePage'
     Then click on the Online Admission menu heading in the top bar
     And that the Guardian Name, Guardian Relation, Guardian Email, Guardian Phone, Guardian Occupation, Guardian Address TextBoxes are visible in the Guardian Details field on the And page
@@ -29,7 +29,7 @@ Feature: WWC-50 User Online Admission Test
     Then Guardian uploads photos for Parent in the Details field
 
   @online
-  Scenario: WWC-110 US003 Test to display the elements of Miscellaneous Details and Upload Documents as a user and enter data
+  Scenario: WWC-110 TC_04 -> US_003 Test to display the elements of Miscellaneous Details and Upload Documents as a user and enter data
     Given user goes to the 'homePage'
     Then click on the Online Admission menu heading in the top bar
     And verifies that the National Identification Number, Previous School Details TextBoxes are visible in the Miscellaneous Details field on the page
@@ -37,7 +37,7 @@ Feature: WWC-50 User Online Admission Test
     And uploads a document to the Upload Documents field
 
   @online
-  Scenario: WWC-111 US003 Test to display the Review Entered Details and Status page as a user
+  Scenario: WWC-111 TC_05 -> US_003 Test to display the Review Entered Details and Status page as a user
     Given user goes to the 'homePage'
     Then click on the Online Admission menu heading in the top bar
     Then fills out the form on the page and clicks Submit

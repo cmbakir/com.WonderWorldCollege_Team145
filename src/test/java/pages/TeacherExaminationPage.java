@@ -62,9 +62,9 @@ public class TeacherExaminationPage {
     @FindBy (xpath = "(//i[@class='fa fa-plus'])[1]")
     public WebElement addButton; //under action section
 
-    @FindBy(xpath = "the //*[@class='box-title titlefix']")
+    @FindBy(xpath = "//h3[@class='box-title titlefix']")
     public WebElement  directingExamList ; //  after clicks add(+) button under actions
-
+    //h3[@class='box-title titlefix']
 
     //edit exam group page
     @FindBy (xpath = "(//i[@class='fa fa-pencil'])[1]")
@@ -79,5 +79,9 @@ public class TeacherExaminationPage {
 
     @FindBy (xpath = "//*[@class='alert alert-success text-left']")
     public WebElement confirmDeleteExamGroup;
+
+
+
+
 }
 

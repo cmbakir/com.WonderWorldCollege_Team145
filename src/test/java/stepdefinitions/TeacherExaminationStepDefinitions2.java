@@ -112,16 +112,20 @@ public class TeacherExaminationStepDefinitions2 {
     public void user_clicks_add_button_under_action_buttons() {
 
         teacherExaminationPage.addButton.click();
+
     }
 
     @Given("verify redirected Exam List Page")
     public void verify_redirected_exam_list_page() {
+        ReusableMethods.bekle(3);
         teacherExaminationPage.directingExamList.isDisplayed();
+        driver.navigate().back();
     }
 
     @Given("User clicks delete button under action section")
     public void user_clicks_delete_button_under_action_section() {
         teacherExaminationPage.deletebutton.click();
+        Driver.getDriver().switchTo().alert().accept();
     }
 
     @Given("user clicks edit button under actions buton")
@@ -132,13 +136,10 @@ public class TeacherExaminationStepDefinitions2 {
 
     @Then("confirm deleted exam group")
     public void confirm_deleted_exam_group() {
-      teacherExaminationPage.deletebutton.click();
+
+      Assertions.assertTrue(teacherExaminationPage.confirmDeleteExamGroup.isDisplayed());
     }
-    @Then("clicks tamam from alert")
-    public void clicks_tamam_from_alert() {
-        Alert alert = driver.switchTo().alert();
-        alert.accept();
-    }
+
 
 
 }
