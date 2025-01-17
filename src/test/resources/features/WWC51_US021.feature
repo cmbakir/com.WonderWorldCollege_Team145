@@ -1,7 +1,7 @@
 Feature: WWC-51 Admin Chat Section Test
 
   @chat
-  Scenario: WWC-162 US021 Test to access and view the Chat section as admin
+  Scenario: WWC-162 TC_01 -> US_021 Test to access and view the Chat section as admin
     Given user logs in as admin
     And confirms that the Chat icon is displayed in the top bar of the admin panel
     Then clicks on the Chat icon and confirms that he is redirected to the Chat page
@@ -9,7 +9,7 @@ Feature: WWC-51 Admin Chat Section Test
     And verifies that the number of incoming messages appears as an icon if there is a notification from a chat in the left bar of the page
 
   @chat
-  Scenario: WWC-163 US021 Test to start a new chat and send messages in the Chat area as admin
+  Scenario: WWC-163 TC_02 -> US_021 Test to start a new chat and send messages in the Chat area as admin
     Given user logs in as admin
     Then clicks on the Chat icon and confirms that he is redirected to the Chat page
     Then click on the + icon on the page and search for 'hakan' in the window that opens, click on the first result and click on the Add button
