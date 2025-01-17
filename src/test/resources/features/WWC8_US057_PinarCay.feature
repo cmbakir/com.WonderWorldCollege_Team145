@@ -1,6 +1,6 @@
 Feature:WWC8 US057 Test for Viewing the Details of the 'My Profile' Menu
 
-  @test
+
   Scenario: WWC64 TC_01 -> US057 Test for Viewing the Details of the 'My Profile' Menu
     Given The user navigates to the parent “homePage” address.
     Then The user accesses the "My Profile" page.
