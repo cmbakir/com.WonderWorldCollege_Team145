@@ -13,6 +13,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -22,7 +23,7 @@ public class HomePageOnlineAdmissionStepDefinitions {
     HomePage homePage = new HomePage();
     Faker faker = new Faker();
     Actions actions = new Actions(Driver.getDriver());
-
+    String filePath = "/Users/copperdevil/Desktop/cem foto.png";
 
     @Given("user goes to the {string}")
     public void user_goes_to_the(String url) {
@@ -113,8 +114,9 @@ public class HomePageOnlineAdmissionStepDefinitions {
     @Then("uploads a photo to the Student Photo section in Basic Details")
     public void uploads_a_photo_to_the_student_photo_section_in_basic_details() {
 
-        homePageOnlineAdmissionPage.studentPhotoButton
-                .sendKeys("Attached_Files/cem foto.png");
+        ReusableMethods.bekle(1);
+
+        homePageOnlineAdmissionPage.studentPhotoButton.sendKeys(filePath);
 
         ReusableMethods.bekle(1);
 
@@ -172,7 +174,7 @@ public class HomePageOnlineAdmissionStepDefinitions {
     public void guardian_uploads_photos_for_parent_in_the_details_field() {
 
         homePageOnlineAdmissionPage.guardianPhotoButton
-                .sendKeys("Attached_Files/cem foto.png");
+                .sendKeys(filePath);
 
         ReusableMethods.bekle(1);
 
@@ -226,7 +228,7 @@ public class HomePageOnlineAdmissionStepDefinitions {
         ReusableMethods.bekle(1);
 
         homePageOnlineAdmissionPage.uploadDocumentButton
-                .sendKeys("Attached_Files/cem foto.png");
+                .sendKeys(filePath);
 
         ReusableMethods.bekle(1);
 
@@ -327,7 +329,7 @@ public class HomePageOnlineAdmissionStepDefinitions {
 
         homePageOnlineAdmissionPage.reviewSubmitButton.click();
 
-        ReusableMethods.bekle(1);
+        ReusableMethods.bekle(2);
 
         Assertions.assertTrue(homePageOnlineAdmissionPage.alertSuccess.isDisplayed());
 
