@@ -3,6 +3,7 @@ package stepdefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import pages.StudentSidebarPage;
 import pages.TeacherReviewPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -13,6 +14,7 @@ public class TeacherReviewStepDefinitions {
 
 
     TeacherReviewPage teacherReviewPage=new TeacherReviewPage();
+    StudentSidebarPage studentSidebarPage = new StudentSidebarPage();
 
 
     @Given("The user goes to the {string} page.")
@@ -28,6 +30,7 @@ public class TeacherReviewStepDefinitions {
 
 
     }
+
     @Then("The user clicks the {string} icon.")
     public void the_user_clicks_the_icon(String string) {
         teacherReviewPage.TeacherReview.click();
@@ -69,4 +72,9 @@ public class TeacherReviewStepDefinitions {
     }
 
 
+    @Then("click logout")
+    public void clickLogout() {
+        studentSidebarPage.logutOutButtonStudent.click();
+
+    }
 }
