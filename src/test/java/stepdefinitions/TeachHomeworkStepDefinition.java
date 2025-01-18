@@ -7,6 +7,7 @@ import org.apache.poi.ss.formula.functions.T;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.remote.RemoteWebElement;
+import pages.ParentMyProfileAndProfilImagePage;
 import pages.TeachHomeworkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -17,7 +18,7 @@ import static utilities.Driver.driver;
 public class TeachHomeworkStepDefinition {
     TeachHomeworkPage teachHomeworkPage=new TeachHomeworkPage();
     Faker faker=new Faker();
-
+    ParentMyProfileAndProfilImagePage parentMyProfileAndProfilImagePage = new ParentMyProfileAndProfilImagePage();
 
     @Given("Go to {string}")
     public void go_to(String TeacherHomeUrl) {
@@ -38,6 +39,8 @@ public class TeachHomeworkStepDefinition {
     }
     @Then("Click on Add Homework Link")
     public void click_on_add_homework_link() {
+
+        teachHomeworkPage.HomeCon.click();
         teachHomeworkPage.HomeWb.click();
         ReusableMethods.bekle(1);
 
@@ -191,8 +194,10 @@ public class TeachHomeworkStepDefinition {
     }
     @Given("Go to Homework List")
     public void go_to_homework_list() {
-        ReusableMethods.login("TeacherHomeUrl","hakan.ersu@wonderworldcollege.com","o6*d@fko3PXL1");
+//        ReusableMethods.login("TeacherHomeUrl","hakan.ersu@wonderworldcollege.com","o6*d@fko3PXL1");
+        ReusableMethods.bekle(2);
         teachHomeworkPage.HomeCon.click();
+        ReusableMethods.bekle(2);
         teachHomeworkPage.HomeWb.click();
         teachHomeworkPage.class11.click();
         teachHomeworkPage.no11.click();
@@ -215,6 +220,7 @@ public class TeachHomeworkStepDefinition {
     public void continue_to_complete_the_deletion_process() {
         teachHomeworkPage.deletedSucces.isDisplayed();
         ReusableMethods.bekle(1);
+
 
     }
     @Given("Go to HomeWork icon")
