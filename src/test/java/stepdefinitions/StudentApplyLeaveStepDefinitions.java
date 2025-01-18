@@ -49,7 +49,7 @@ public class StudentApplyLeaveStepDefinitions {
 
     @Given("user clicks edit button")
     public void user_clicks_edit_button() {
-
+        ReusableMethods.bekle(2);
     studentApplyLeavePage.editButton.click();
     ReusableMethods.bekle(2);
 
