@@ -72,4 +72,10 @@ public class StudentSidebarPage {
 
     @FindBy(xpath = "//*[@class=\"active\"]")
     public WebElement aktivSectionText;
+
+    @FindBy (xpath = "//*[@href='https://qa.wonderworldcollege.com/site/logout']")
+    public WebElement logutOutButtonStudent;
+
+
+
 }
