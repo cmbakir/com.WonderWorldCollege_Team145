@@ -32,7 +32,7 @@ public class StudentExaminationsStepDefinitions {
     @Then("User clicks the Exam Schedule menu.")
     public void user_clicks_the_exam_schedule_menu() {
         studentExaminationsPage.StdExSchduleMenuButton.click();
-        ReusableMethods.bekle(1);
+        ReusableMethods.bekle(2);
     }
 
     @Then("User verifies that they are on the {string} page.")
