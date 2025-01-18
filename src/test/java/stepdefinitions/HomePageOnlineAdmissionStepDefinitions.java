@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.By;
+import pages.HomePage;
 import pages.HomePageOnlineAdmissionPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -18,6 +19,7 @@ import java.time.format.DateTimeFormatter;
 public class HomePageOnlineAdmissionStepDefinitions {
 
     HomePageOnlineAdmissionPage homePageOnlineAdmissionPage = new HomePageOnlineAdmissionPage();
+    HomePage homePage = new HomePage();
     Faker faker = new Faker();
     Actions actions = new Actions(Driver.getDriver());
 
@@ -32,7 +34,7 @@ public class HomePageOnlineAdmissionStepDefinitions {
     public void click_on_the_online_admission_menu_heading_in_the_top_bar() {
         homePageOnlineAdmissionPage.linkOnlineAddmission.click();
 
-       // Driver.getDriver().findElement(By.linkText("Online Admission")).click();
+       homePage.linkOnlineAdmission.click();
     }
 
     @Then("confirms that it redirects to the Online Admission page")
@@ -112,7 +114,7 @@ public class HomePageOnlineAdmissionStepDefinitions {
     public void uploads_a_photo_to_the_student_photo_section_in_basic_details() {
 
         homePageOnlineAdmissionPage.studentPhotoButton
-                .sendKeys("C:\\Users\\legen\\OneDrive\\Masaüstü\\Her Şey\\Resimler\\named.jpg");
+                .sendKeys("Attached_Files/cem foto.png");
 
         ReusableMethods.bekle(1);
 
@@ -170,7 +172,7 @@ public class HomePageOnlineAdmissionStepDefinitions {
     public void guardian_uploads_photos_for_parent_in_the_details_field() {
 
         homePageOnlineAdmissionPage.guardianPhotoButton
-                .sendKeys("C:\\Users\\legen\\OneDrive\\Masaüstü\\Her Şey\\Resimler\\named.jpg");
+                .sendKeys("Attached_Files/cem foto.png");
 
         ReusableMethods.bekle(1);
 
@@ -224,7 +226,7 @@ public class HomePageOnlineAdmissionStepDefinitions {
         ReusableMethods.bekle(1);
 
         homePageOnlineAdmissionPage.uploadDocumentButton
-                .sendKeys("C:\\Users\\legen\\OneDrive\\Masaüstü\\Programming\\pdf\\the-pragmatic-programmer.pdf");
+                .sendKeys("Attached_Files/cem foto.png");
 
         ReusableMethods.bekle(1);
 

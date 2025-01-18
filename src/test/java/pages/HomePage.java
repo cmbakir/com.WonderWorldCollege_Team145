@@ -15,6 +15,7 @@ public class HomePage {
     // HomePage >> Login
 
 
-
+    @FindBy(xpath = "//*[text()='Online Admission']")
+    public WebElement linkOnlineAdmission;
 
 }
