@@ -44,7 +44,6 @@ Feature: WWC5 US022 Student Information Management
     And click on the "Online Admission" link
     Then see the "Student List" table
     When click the "Edit and Enroll" icon for a specific student
-    Then a confirmation dialog box is clicked
     Then the Online Admission form is displayed with pre-filled student details
     Then the "Admission No" field is filled in
     When the "Fee Details" section is completed, it is verified that the total fee is calculated automatically
@@ -53,7 +52,6 @@ Feature: WWC5 US022 Student Information Management
     When the Save button is clicked
     Then a confirmation message indicating successful saving is displayed
     Then the "Edit and Enroll" icon for a specific student is clicked
-    Then a confirmation dialog box is clicked
     When the Save and Enroll button is clicked
     Then it is verified that the student's enrollment status is updated to "Enrolled".
 
