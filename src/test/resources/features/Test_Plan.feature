@@ -34,7 +34,7 @@ Feature: WWC2 US001 As a user, I must be able to access the website in order to 
 
 ##Feature: WWC-50 US003 User Online Admission Test
 
-
+  @paralel1
   Scenario: WWC-105 US003 As a user, viewing the Online Admission page and Basic Details and data entry test
     Then click on the Online Admission menu heading in the top bar
     And confirms that it redirects to the Online Admission page
@@ -45,12 +45,12 @@ Feature: WWC2 US001 As a user, I must be able to access the website in order to 
     Then uploads a photo to the Student Photo section in Basic Details
   # Kontrol
 
-
+  @paralel1
   Scenario: WWC-107 US003 Test to display the Parent Detail window and enter data as a user
     And verifies that the Father Name, Mother Name TextBoxes are visible in the Parent Detail field on the sheet
     Then enters random data in the Father Name, Mother Name TextBoxes in the Parent Detail field
 
-
+  @paralel1
   Scenario: WWC-108 US003 Test to display the Guardians Details elements and enter data as a user
     And that the Guardian Name, Guardian Relation, Guardian Email, Guardian Phone, Guardian Occupation, Guardian Address TextBoxes are visible in the Guardian Details field on the And page
     Then verifies that If Guardian Is, Guardian Name, Guardian Relation TextBoxes in the Guardian Details field are required fields to enter data
@@ -59,14 +59,14 @@ Feature: WWC2 US001 As a user, I must be able to access the website in order to 
     Then Guardian uploads photos for Parent in the Details field
     #Kontrol
 
-
+  @paralel1
   Scenario: WWC-110 US003 Test to display the elements of Miscellaneous Details and Upload Documents as a user and enter data
     And verifies that the National Identification Number, Previous School Details TextBoxes are visible in the Miscellaneous Details field on the page
     Then enters random values in the National Identification Number, Previous School Details TextBoxes in the Miscellaneous Details field
     And uploads a document to the Upload Documents field
     #Kontrol
 
-
+  @paralel1
   Scenario: WWC-111 US003 Test to display the Review Entered Details and Status page as a user
     Then fills out the form on the page and clicks Submit
     And verifies that the student is redirected to the Review Entered Details and Status page and that a Reference Number has been created on behalf of the student
