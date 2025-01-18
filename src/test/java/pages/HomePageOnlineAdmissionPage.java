@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.logging.XMLFormatter;
+
 public class HomePageOnlineAdmissionPage {
 
     public HomePageOnlineAdmissionPage(){
@@ -172,5 +174,9 @@ public class HomePageOnlineAdmissionPage {
 
     @FindBy(xpath = "//*[@class='alert alert-success']")
     public WebElement alertSuccess;
+
+    @FindBy (xpath = "//*[@href='../online_admission']")
+    public WebElement linkOnlineAddmission;
+
 
 }
