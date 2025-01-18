@@ -81,6 +81,8 @@ public class StudentMyProfileDefinitions {
         studentMyProfilePage.sidebarMyPro.click();
 
         studentMyProfilePage.documents.click();
+
       //  assertTrue(studentMyProfilePage.documentNamefirst.isDisplayed());
+
     }
 }

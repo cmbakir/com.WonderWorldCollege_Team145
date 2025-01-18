@@ -64,11 +64,11 @@ public class StudentMyProfilePage {
     @FindBy(xpath = "(//*[@class='bordertop'])[3]")
     public WebElement guardiaName;
 
-    @FindBy(xpath = "//*[@class='pagetitleh']")
+    @FindBy(xpath = "(//*[@*='alert alert-danger'])[2]")
     public WebElement examNamefirst;
 
     @FindBy(xpath = "//*[@*='alert alert-danger']")
-    public WebElement documentNamefirst;
+    public WebElement Namefirst;
 
     @FindBy(xpath = "//*[@*='mt0']")
     public WebElement welcome;
