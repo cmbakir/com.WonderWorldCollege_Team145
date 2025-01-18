@@ -12,10 +12,13 @@ public class TeachHomeworkPage {
 
     @FindBy(xpath = "//*[@type =('text')]")
     public WebElement LogBox;
+
     @FindBy(xpath = "//*[@type = ('password')]")
     public WebElement passBox;
+
     @FindBy(xpath = "//*[@type = ('submit')]")
     public WebElement SubButton;
+
     @FindBy(xpath = "//*[@id=\"sibe-box\"]/ul[2]/li[8]/a/i[1]")
     public WebElement HomeCon;
     @FindBy(xpath = "//*[@id=\"sibe-box\"]/ul[2]/li[8]/ul/li[1]/a")
