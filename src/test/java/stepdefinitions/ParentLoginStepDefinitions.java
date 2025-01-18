@@ -50,6 +50,8 @@ public class ParentLoginStepDefinitions {
 
     @Given("User enters username.")
     public void user_enters_username() {
+//        parentLoginPage.studentProfil.click();
+  //      parentLoginPage.studentLogoutButton.click();
         parentLoginPage.userNameBox.sendKeys(ConfigReader.getProperty("Parent_username_009"));
         ReusableMethods.bekle(1);
     }
@@ -127,6 +129,8 @@ public class ParentLoginStepDefinitions {
         Assertions.assertEquals(expectedText,actuelText);
 
     }
+
+
 
 
 

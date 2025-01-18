@@ -18,7 +18,7 @@ public class TeacherCommunicationPage {
     }
 
 
-    @FindBy(xpath = "//span[text()='Communicate']")
+    @FindBy(xpath = " //*[text()='Communicate']")
     public WebElement sideNavCommunicateButton;
 
     @FindBy(xpath = "//*[@id=\"sibe-box\"]/ul[2]/li[7]/ul/li[2]/a")

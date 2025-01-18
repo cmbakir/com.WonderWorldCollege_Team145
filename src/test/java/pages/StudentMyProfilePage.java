@@ -84,17 +84,17 @@ public class StudentMyProfilePage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement studentSubmitButton;
 
-    public void studentLogin() {
-        WebDriver driver = Driver.getDriver();
-        driver.get(ConfigReader.getProperty("studentAndParentLogin"));
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(studentEmailBox));
+  //  public void studentLogin() {
+   //     WebDriver driver = Driver.getDriver();
+   //     driver.get(ConfigReader.getProperty("studentAndParentLogin"));
+    //    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    //    wait.until(ExpectedConditions.visibilityOf(studentEmailBox));
 
 
-        studentEmailBox.sendKeys(ConfigReader.getProperty("studentidc"));
-        studentPasswordBox.sendKeys(ConfigReader.getProperty("studentpass"));
-        studentSubmitButton.click();
-    }
+      //  studentEmailBox.sendKeys(ConfigReader.getProperty("studentidc"));
+       // studentPasswordBox.sendKeys(ConfigReader.getProperty("studentpass"));
+        //studentSubmitButton.click();
+//    }
 }
 
 

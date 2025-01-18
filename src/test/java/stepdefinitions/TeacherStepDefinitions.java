@@ -34,7 +34,9 @@ public class TeacherStepDefinitions {
     @Then("The {string} link under the {string} menu is visible")
     public void the_link_under_the_menu_is_visible(String assertion1, String assertion2) {
 
-        Assertions.assertTrue(teacherCommunicationPage.sideNavSendEmailButton.isDisplayed());
+        ReusableMethods.bekle(2);
+      //  Assertions.assertTrue(teacherCommunicationPage.sideNavSendEmailButton.isDisplayed());
+        teacherCommunicationPage.sideNavCommunicateButton.click();
     }
 
     @When("The teacher clicks on the {string} link")

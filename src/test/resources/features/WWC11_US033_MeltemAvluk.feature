@@ -107,10 +107,15 @@ Feature: WWC11 Examination Group Creating Test
     And verify redirected Exam List Page
 
 
-  @test
+
   Scenario: WWC83 TC06->US_033 Test to Edit exam group list is edited after entered new updates
 
-
+    Given user clicks edit button under actions buton
+    Then user enters new name
+    Then selects exam type from dropdown menu
+    Then types any description to box
+    Then click save button
+    Then verifies recorded new exam group
 
   Scenario: WWC82 TC05->US_033 Test to verify if add exam(+) button works
    # TC01

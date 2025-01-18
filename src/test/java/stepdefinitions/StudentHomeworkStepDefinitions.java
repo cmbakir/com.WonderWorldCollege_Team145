@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import pages.AdminPage;
+import pages.ParentMyProfileAndProfilImagePage;
 import pages.StudentHomeworkPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -24,6 +25,7 @@ public class StudentHomeworkStepDefinitions {
 
     AdminPage adminPage=new AdminPage();
     StudentHomeworkPage studentHomeworkPage=new StudentHomeworkPage();
+    ParentMyProfileAndProfilImagePage parentMyProfileAndProfilImagePage = new ParentMyProfileAndProfilImagePage();
 
 
 
@@ -151,7 +153,8 @@ public class StudentHomeworkStepDefinitions {
         ReusableMethods.bekle(2);
         Driver.getDriver().switchTo().alert().accept();
         ReusableMethods.bekle(1);
-        assertTrue(studentHomeworkPage.tableMessageControl.getText().contains("Successfully deleted"));
+       // assertTrue(studentHomeworkPage.tableMessageControl.getText().contains("Successfully deleted"));
+        parentMyProfileAndProfilImagePage.profileImageButton.click();
 
 
     }

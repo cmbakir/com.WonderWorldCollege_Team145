@@ -267,6 +267,7 @@ public class HomePageOnlineAdmissionStepDefinitions {
         ReusableMethods.bekle(1);
 
         homePageOnlineAdmissionPage.inputBoxMobilePhone.sendKeys(faker.phoneNumber().cellPhone());
+        homePageOnlineAdmissionPage.inputBoxEmail.clear();
         homePageOnlineAdmissionPage.inputBoxEmail.sendKeys(faker.internet().emailAddress());
 
         actions.moveToElement(homePageOnlineAdmissionPage.inputGuardianName).perform();
@@ -284,9 +285,10 @@ public class HomePageOnlineAdmissionStepDefinitions {
 
     @Then("verifies that the student is redirected to the Review Entered Details and Status page and that a Reference Number has been created on behalf of the student")
     public void verifies_that_the_student_is_redirected_to_the_review_entered_details_and_status_page_and_that_a_reference_number_has_been_created_on_behalf_of_the_student() {
-
+        ReusableMethods.bekle(2);
         String expectedUrlIcerik = "online_admission_review";
         String actualUrl = Driver.getDriver().getCurrentUrl();
+        ReusableMethods.bekle(2);
 
         Assertions.assertTrue(actualUrl.contains(expectedUrlIcerik));
 
