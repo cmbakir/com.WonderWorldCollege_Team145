@@ -365,7 +365,7 @@ Feature: WWC2 US001 As a user, I must be able to access the website in order to 
 
 
 ##Feature: WWC11 US33 Examination Group Creating Test
-  @paralel1
+
   Scenario: WWC43 TC01->US_033 Test to verify Examination Test Bar,Page For Students
 
     Given  user clicks "adminAndTeacherLogin"
