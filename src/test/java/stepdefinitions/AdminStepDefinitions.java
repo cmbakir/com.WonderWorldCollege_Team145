@@ -20,6 +20,10 @@ public class AdminStepDefinitions {
     WebDriver driver;
     Faker faker=new Faker();
 
+
+
+
+
     @Given("logged in as an admin")
     public void logged_in_as_an_admin() {
         ReusableMethods.adminlogin("adminAndTeacherLogin","ozlem.admin@wonderworldcollege.com","o6*d@fko3PXL1");
@@ -69,6 +73,7 @@ public class AdminStepDefinitions {
 
     @Then("see the {string} table")
     public void see_the_table(String string) {
+
         assertTrue(adminPage.labelStudentList.isDisplayed());
     }
 

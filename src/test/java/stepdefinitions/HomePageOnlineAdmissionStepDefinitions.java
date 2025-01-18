@@ -30,8 +30,9 @@ public class HomePageOnlineAdmissionStepDefinitions {
 
     @Then("click on the Online Admission menu heading in the top bar")
     public void click_on_the_online_admission_menu_heading_in_the_top_bar() {
+        homePageOnlineAdmissionPage.linkOnlineAddmission.click();
 
-        Driver.getDriver().findElement(By.linkText("Online Admission")).click();
+       // Driver.getDriver().findElement(By.linkText("Online Admission")).click();
     }
 
     @Then("confirms that it redirects to the Online Admission page")
