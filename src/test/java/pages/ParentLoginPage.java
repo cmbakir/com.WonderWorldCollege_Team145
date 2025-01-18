@@ -30,4 +30,9 @@ public class ParentLoginPage {
     @FindBy(xpath = "//*[@class=\"font-white bolds\"]")
     public WebElement forgotPageText;
 
+    @FindBy(xpath = "//*[@class=\"fa fa-sign-out fa-fw\"]")
+    public WebElement studentLogoutButton;
+    @FindBy(xpath = "//*[@class=\"topuser-image\"]")
+    public WebElement studentProfil;
+
 }
