@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +18,7 @@ public class AdminStepDefinitions {
 
     AdminPage adminPage=new AdminPage();
     WebDriver driver;
+    Faker faker=new Faker();
 
 
     @Given("logged in as an admin")
@@ -68,6 +70,7 @@ public class AdminStepDefinitions {
 
     @Then("see the {string} table")
     public void see_the_table(String string) {
+
         assertTrue(adminPage.labelStudentList.isDisplayed());
     }
 
@@ -131,8 +134,7 @@ public class AdminStepDefinitions {
         ReusableMethods.bekle(1);
         adminPage.inputBoxAdmissionNo.clear();
         ReusableMethods.bekle(1);
-        String sendKey="1997";
-        adminPage.inputBoxAdmissionNo.sendKeys(sendKey);
+        adminPage.inputBoxAdmissionNo.sendKeys(faker.number().digits(4));
         ReusableMethods.bekle(2);
     }
 
